@@ -24,10 +24,19 @@
 %Author is always "The CMS Collaboration" for PAS and papers, so author, etc, below will be ignored in those cases
 %For multiple affiliations, create an address entry for the combination
 %To mark authors as primary, use the \author* form
-\address[neu]{Northeastern University}
-\address[fnal]{Fermilab}
-\address[cern]{CERN}
-\author[cern]{The CMS Collaboration}
+\address[neu]{RWTH Aachen University}
+\author[neu]{Yusuf Erdogan}
+\author[neu]{G\"unter Fl\"ugge}
+\author[neu]{Thomas Hebbeker}
+\author[neu]{Andreas K\"unsken}
+\author[neu]{Erik Dietz-Laursson}
+\author[neu]{Markus Merschmeyer}
+\author[neu]{Oliver Pooth}
+\author[neu]{Thomas Rademacher}
+\author[neu]{Florian Scheuch}
+\author[neu]{Achim Stahl}
+\author[neu]{Simon Weingarten}
+\author[neu]{Lars Weinstock}
 
 % >> Date
 % The date is in yyyy/mm/dd format. Today has been
@@ -61,15 +70,6 @@ pdfsubject={CMS},%
 pdfkeywords={CMS, physics, software, computing}}
 
 \maketitle %maketitle comes after all the front information has been supplied
-
-
-%%%%%
-%%%%%
-\include{hoSipmUpgrade}
-%%%%%
-%%%%%
-
-
 % >> Text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Begin text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% **DO NOT REMOVE THE BIBLIOGRAPHY** which is located before the appendix.
@@ -78,334 +78,18 @@ pdfkeywords={CMS, physics, software, computing}}
 %% The latter works for you, but our parser looks for the braces and will break when uploading the document.
 %%%%%%%%%%%%%%%
 
+% INPUT HERE YOUR .tex FILE CONTAINING YOUR CHAPTER !!!!
+\include{hoSipmUpgrade}
+% >> acknowledgements (for journal papers)
+% Please include the latest version from https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubAcknow.
+%\section*{Acknowledgements}
+% ack-text
+
 %% **DO NOT REMOVE BIBLIOGRAPHY**
 \bibliography{auto_generated}   % will be created by the tdr script.
-
-%% examples of appendices. **DO NOT PUT \end{document} at the end
-%\clearpage
-\appendix
-\section{PTDR Symbol Definitions\label{app:symdef}}
-If absolutely necessary, symbol definitions may
-be over-ridden using the \verb|\renewcommand| command. If you don't want to over-ride the default version of a command but provide it for use outside the normal tdr system, please use the \verb|\providecommand| command.
 
 %
 % Below is a multi-column format to display the standard PTDR symbols.
 % Feel free to delete the lines from here to the end and the pdefs.tex file once you start modifying the template. The actual definitions are
 % pulled in by the \input{ptdr-definitions} at the beginning.
 %
-{
-\small%
-\providecommand{\symexamp}[2]
-{\makebox[\columnwidth]{\makebox[0.160\textwidth][l]{#1:}
-                          \makebox[0.025\textwidth][l]{~}
-                          \parbox[t]{0.26\textwidth}{#2\vspace*{-2.5mm}\hfill}}\\}
-\setlength{\columnseprule}{0.2mm}
-\ifthenelse{\boolean{cms@external}}{}{\setlength{\multicolsep}{7mm}
-%
-\vspace*{-5mm}
-\begin{multicols}{2}
-%
-\raggedcolumns%
-}
-\noindent%
-\input{pdefs}\\
-\ifthenelse{\boolean{cms@external}}{}{\end{multicols}}
-\clearpage
-\section{Particle Symbols\label{pennames}}
-\ifthenelse{\boolean{cms@external}}{}{\vspace*{-5mm}
-\begin{multicols}{2}
-%
-\raggedcolumns%
-}
-%
-\noindent%
-\symexamp{PAz}{\PAz}
-\symexamp{PBm}{\PBm}
-\symexamp{PBpm}{\PBpm}
-\symexamp{PBp}{\PBp}
-\symexamp{PBz}{\PBz}
-\symexamp{PB}{\PB}
-\symexamp{PDiz}{\PDiz}
-\symexamp{PDm}{\PDm}
-\symexamp{PDpm}{\PDpm}
-\symexamp{PDp}{\PDp}
-\symexamp{PDstiiz}{\PDstiiz}
-\symexamp{PDstpm}{\PDstpm}
-\symexamp{PDstz}{\PDstz}
-\symexamp{PDz}{\PDz}
-\symexamp{PD}{\PD}
-\symexamp{PEz}{\PEz}
-\symexamp{PHpm}{\PHpm}
-\symexamp{PHz}{\PHz}
-\symexamp{PJgy}{\PJgy}
-\symexamp{PKeiii}{\PKeiii}
-\symexamp{PKgmiii}{\PKgmiii}
-\symexamp{PKia}{\PKia}
-\symexamp{PKii}{\PKii}
-\symexamp{PKi}{\PKi}
-\symexamp{PKm}{\PKm}
-\symexamp{PKpm}{\PKpm}
-\symexamp{PKp}{\PKp}
-\symexamp{PKsta}{\PKsta}
-\symexamp{PKstb}{\PKstb}
-\symexamp{PKstiii}{\PKstiii}
-\symexamp{PKstii}{\PKstii}
-\symexamp{PKstiv}{\PKstiv}
-\symexamp{PKstz}{\PKstz}
-\symexamp{PKst}{\PKst}
-\symexamp{PKzL}{\PKzL}
-\symexamp{PKzS}{\PKzS}
-\symexamp{PKzeiii}{\PKzeiii}
-\symexamp{PKzgmiii}{\PKzgmiii}
-\symexamp{PKz}{\PKz}
-\symexamp{PK}{\PK}
-\symexamp{PLpm}{\PLpm}
-\symexamp{PLz}{\PLz}
-\symexamp{PN}{\PN}
-\symexamp{PNa}{\PNa}
-\symexamp{PNb}{\PNb}
-\symexamp{PNc}{\PNc}
-\symexamp{PNd}{\PNd}
-\symexamp{PNe}{\PNe}
-\symexamp{PNf}{\PNf}
-\symexamp{PNg}{\PNg}
-\symexamp{PNh}{\PNh}
-\symexamp{PNi}{\PNi}
-\symexamp{PNj}{\PNj}
-\symexamp{PNk}{\PNk}
-\symexamp{PNl}{\PNl}
-\symexamp{PNm}{\PNm}
-\symexamp{PSHpm}{\PSHpm}
-\symexamp{PSHz}{\PSHz}
-\symexamp{PSWpm}{\PSWpm}
-\symexamp{PSZz}{\PSZz}
-\symexamp{PSe}{\PSe}
-\symexamp{PSgg}{\PSgg}
-\symexamp{PSgm}{\PSgm}
-\symexamp{PSgn}{\PSgn}
-\symexamp{PSgt}{\PSgt}
-\symexamp{PSgxpm}{\PSgxpm}
-\symexamp{PSgxz}{\PSgxz}
-\symexamp{PSg}{\PSg}
-\symexamp{PSq}{\PSq}
-\symexamp{PWR}{\PWR}
-\symexamp{PWm}{\PWm}
-\symexamp{PWpr}{\PWpr}
-\symexamp{PWp}{\PWp}
-\symexamp{PW}{\PW}
-\symexamp{PZLR}{\PZLR}
-\symexamp{PZgc}{\PZgc}
-\symexamp{PZge}{\PZge}
-\symexamp{PZgy}{\PZgy}
-\symexamp{PZi}{\PZi}
-\symexamp{PZz}{\PZz}
-\symexamp{PaBz}{\PaBz}
-\symexamp{PaB}{\PaB}
-\symexamp{PaDz}{\PaDz}
-\symexamp{PaD}{\PaD}
-\symexamp{PaKz}{\PaKz}
-\symexamp{PaSq}{\PaSq}
-\symexamp{PagL}{\PagL}
-\symexamp{PagOp}{\PagOp}
-\symexamp{PagSm}{\PagSm}
-\symexamp{PagSp}{\PagSp}
-\symexamp{PagSz}{\PagSz}
-\symexamp{PagXp}{\PagXp}
-\symexamp{PagXz}{\PagXz}
-\symexamp{Pagne}{\Pagne}
-\symexamp{Pagngm}{\Pagngm}
-\symexamp{Pagngt}{\Pagngt}
-\symexamp{Paii}{\Paii}
-\symexamp{Pai}{\Pai}
-\symexamp{Pap}{\Pap}
-\symexamp{Paqb}{\Paqb}
-\symexamp{Paqc}{\Paqc}
-\symexamp{Paqd}{\Paqd}
-\symexamp{Paqs}{\Paqs}
-\symexamp{Paqt}{\Paqt}
-\symexamp{Paqu}{\Paqu}
-\symexamp{Paq}{\Paq}
-\symexamp{Paz}{\Paz}
-\symexamp{Pbgcia}{\Pbgcia}
-\symexamp{Pbgciia}{\Pbgciia}
-\symexamp{Pbgcii}{\Pbgcii}
-\symexamp{Pbgci}{\Pbgci}
-\symexamp{Pbgcza}{\Pbgcza}
-\symexamp{Pbgcz}{\Pbgcz}
-\symexamp{Pbi}{\Pbi}
-\symexamp{PcgLp}{\PcgLp}
-\symexamp{PcgS}{\PcgS}
-\symexamp{PcgXp}{\PcgXp}
-\symexamp{PcgXz}{\PcgXz}
-\symexamp{Pcgcii}{\Pcgcii}
-\symexamp{Pcgci}{\Pcgci}
-\symexamp{Pcgcz}{\Pcgcz}
-\symexamp{Pcgh}{\Pcgh}
-\symexamp{Pem}{\Pem}
-\symexamp{Pep}{\Pep}
-\symexamp{Pe}{\Pe}
-\symexamp{Pfia}{\Pfia}
-\symexamp{Pfib}{\Pfib}
-\symexamp{Pfiia}{\Pfiia}
-\symexamp{Pfiib}{\Pfiib}
-\symexamp{Pfiic}{\Pfiic}
-\symexamp{Pfiid}{\Pfiid}
-\symexamp{Pfiipr}{\Pfiipr}
-\symexamp{Pfii}{\Pfii}
-\symexamp{Pfiv}{\Pfiv}
-\symexamp{Pfi}{\Pfi}
-\symexamp{Pfza}{\Pfza}
-\symexamp{Pfzb}{\Pfzb}
-\symexamp{Pfz}{\Pfz}
-\symexamp{PgD}{\PgD}
-\symexamp{PgDa}{\PgDa}
-\symexamp{PgDb}{\PgDb}
-\symexamp{PgDc}{\PgDc}
-\symexamp{PgDd}{\PgDd}
-\symexamp{PgDe}{\PgDe}
-\symexamp{PgDf}{\PgDf}
-\symexamp{PgDh}{\PgDh}
-\symexamp{PgDi}{\PgDi}
-\symexamp{PgDj}{\PgDj}
-\symexamp{PgDk}{\PgDk}
-\symexamp{PgL}{\PgL}
-\symexamp{PgLa}{\PgLa}
-\symexamp{PgLb}{\PgLb}
-\symexamp{PgLc}{\PgLc}
-\symexamp{PgLd}{\PgLd}
-\symexamp{PgLe}{\PgLe}
-\symexamp{PgLf}{\PgLf}
-\symexamp{PgLg}{\PgLg}
-\symexamp{PgLh}{\PgLh}
-\symexamp{PgLi}{\PgLi}
-\symexamp{PgLj}{\PgLj}
-\symexamp{PgLk}{\PgLk}
-\symexamp{PgLl}{\PgLl}
-\symexamp{PgLm}{\PgLm}
-\symexamp{PgO}{\PgO}
-\symexamp{PgOm}{\PgOm}
-\symexamp{PgOma}{\PgOma}
-\symexamp{PgS}{\PgS}
-\symexamp{PgSa}{\PgSa}
-\symexamp{PgSb}{\PgSb}
-\symexamp{PgSc}{\PgSc}
-\symexamp{PgSd}{\PgSd}
-\symexamp{PgSe}{\PgSe}
-\symexamp{PgSf}{\PgSf}
-\symexamp{PgSg}{\PgSg}
-\symexamp{PgSh}{\PgSh}
-\symexamp{PgSi}{\PgSi}
-\symexamp{PgSm}{\PgSm}
-\symexamp{PgSp}{\PgSp}
-\symexamp{PgSz}{\PgSz}
-\symexamp{PgU}{\PgU}
-\symexamp{PgUa}{\PgUa}
-\symexamp{PgUb}{\PgUb}
-\symexamp{PgUc}{\PgUc}
-\symexamp{PgUd}{\PgUd}
-\symexamp{PgUe}{\PgUe}
-\symexamp{PgUf}{\PgUf}
-\symexamp{PgX}{\PgX}
-\symexamp{PgXa}{\PgXa}
-\symexamp{PgXb}{\PgXb}
-\symexamp{PgXc}{\PgXc}
-\symexamp{PgXd}{\PgXd}
-\symexamp{PgXe}{\PgXe}
-\symexamp{PgXm}{\PgXm}
-\symexamp{PgXz}{\PgXz}
-\symexamp{Pgfa}{\Pgfa}
-\symexamp{Pgfiii}{\Pgfiii}
-\symexamp{Pgf}{\Pgf}
-\symexamp{Pgg}{\Pgg}
-\symexamp{Pgha}{\Pgha}
-\symexamp{Pghb}{\Pghb}
-\symexamp{Pghpr}{\Pghpr}
-\symexamp{Pgh}{\Pgh}
-\symexamp{Pgmm}{\Pgmm}
-\symexamp{Pgmp}{\Pgmp}
-\symexamp{Pgm}{\Pgm}
-\symexamp{Pgne}{\Pgne}
-\symexamp{Pgngm}{\Pgngm}
-\symexamp{Pgngt}{\Pgngt}
-\symexamp{Pgoa}{\Pgoa}
-\symexamp{Pgob}{\Pgob}
-\symexamp{Pgoiii}{\Pgoiii}
-\symexamp{Pgo}{\Pgo}
-\symexamp{Pgpa}{\Pgpa}
-\symexamp{Pgpii}{\Pgpii}
-\symexamp{Pgpm}{\Pgpm}
-\symexamp{Pgppm}{\Pgppm}
-\symexamp{Pgpp}{\Pgpp}
-\symexamp{Pgpz}{\Pgpz}
-\symexamp{Pgp}{\Pgp}
-\symexamp{Pgra}{\Pgra}
-\symexamp{Pgrb}{\Pgrb}
-\symexamp{Pgriii}{\Pgriii}
-\symexamp{Pgr}{\Pgr}
-\symexamp{Pgt}{\Pgt}
-\symexamp{Pgya}{\Pgya}
-\symexamp{Pgyb}{\Pgyb}
-\symexamp{Pgyc}{\Pgyc}
-\symexamp{Pgyd}{\Pgyd}
-\symexamp{Pgy}{\Pgy}
-\symexamp{Phia}{\Phia}
-\symexamp{Pn}{\Pn}
-\symexamp{Pp}{\Pp}
-\symexamp{Pqb}{\Pqb}
-\symexamp{Pqc}{\Pqc}
-\symexamp{Pqd}{\Pqd}
-\symexamp{Pqs}{\Pqs}
-\symexamp{Pqt}{\Pqt}
-\symexamp{Pqu}{\Pqu}
-\symexamp{Pq}{\Pq}
-\symexamp{PsDipm}{\PsDipm}
-\symexamp{PsDm}{\PsDm}
-\symexamp{PsDp}{\PsDp}
-\symexamp{PsDst}{\PsDst}
-\noindent%
-\textcolor{gray}{\rule{\columnwidth}{0.2pt}}\\
-\noindent%
-Future PENNAMES\hspace{\fill}{\tiny{include \verb|\xspace|}}\\
-\symexamp{PH}{\PH}
-\symexamp{PJGy}{\PJGy}
-\symexamp{PBzs}{\PBzs}
-\symexamp{Pg}{\Pg}
-\symexamp{PSg}{\PSg}
-\symexamp{PSQ}{\PSQ}
-\symexamp{PXXG}{\PXXG}
-\symexamp{PXXSG}{\PXXSG}
-\symexamp{PSGcp}{\PSGcp}
-\symexamp{PSGc}{\PSGc}
-\symexamp{PSGcz}{\PSGcz}
-\symexamp{PSGczDo}{\PSGczDo}
-\symexamp{PSGczDt}{\PSGczDt}
-\symexamp{PSGcpm}{\PSGcpm}
-\symexamp{Pl}{\Pl}
-\symexamp{PAl}{\PAl}
-\symexamp{PGnl}{\PGnl}
-\symexamp{PAGnl}{\PAGnl}
-\symexamp{PQtpr}{\PQtpr}
-\symexamp{PAQtpr}{\PAQtpr}
-\symexamp{PQbpr}{\PQbpr}
-\symexamp{PAQbpr}{\PAQbpr}
-\symexamp{PGg}{\PGg}
-\symexamp{PKzS}{\PKzS}
-\symexamp{PBs}{\PBs}
-\symexamp{PSQt}{\PSQt}
-\symexamp{PZpr}{\PZpr}
-\symexamp{PGn}{\PGn}
-\symexamp{PAGn}{\PAGn}
-\ifthenelse{\boolean{cms@external}}{}{\end{multicols}}
-}
-\section{OS X specific instructions}
-These instructions are based on a clean installation of Mac OS X 10.7.3 (Lion). This release has current versions of both perl and svn.
-
-Download the TeXLive 2011 installation, \url{http://mirror.ctan.org/systems/mac/mactex/MacTeX.mpkg.zip}, and install (if not already done). This is a relatively large installation.
-
-If a simple \textit{kinit Your\_CERN\_Username@CERN.CH} doesn't allow you to access the svn repository in the standard fashion, you can follow the instructions at \url{http://svn.web.cern.ch/svn/howto.php#accessing-sshlinux} to set up an ssh key pair. I tried using the keychain, but it isn't supported in the included version of svn. There are commercial versions available with GUIs, and maybe even free versions---I didn't look very hard---but they are not necessary.
-
-Then follow the general instructions in \url{https://svnweb.cern.ch/cern/wsvn/tdr2/papers/XXX-08-000/trunk/XXX-08-000_temp.pdf} (this document) and \url{https://svnweb.cern.ch/cern/wsvn/tdr2/utils/trunk/general/notes_for_authors.pdf}.
-
-Additional style files are required to generate documents in the journal formats, and many of these need to be installed individually.
-%%% DO NOT ADD \end{document}!
-

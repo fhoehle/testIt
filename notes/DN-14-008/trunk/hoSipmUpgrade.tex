@@ -2,32 +2,18 @@
 \begin{itemize}
 \item(Was there an introduction to HO already? If no, this goes here...)
 \end{itemize}
-In the first long shutdown of the LHC, the Outer Hadron Calorimeter (HO) was also subject to upgrades. The previously used HPDs\footnote{{\bf H}ybrid {\bf P}hoto{\bf d}iodes} were replaced by...
-\subsection{The New Readout System}
-\begin{itemize}
-\item Designed to match old readout chain.
-\item Two Layers in ring 0 -$>$ Light mixer for geometry reasons
-\item PCB with Peltier for stabilization
-\end{itemize}
-\subsubsection{The SiPM Model}
-\begin{itemize}
-\item The SiPM model like s10931 (?)
-\item Rather short, only the specs of the device
-\end{itemize}
+In the first long shutdown of the LHC, the Outer Hadron Calorimeter (HO) was subject to upgrades. The previously used HPDs\footnote{{\bf H}ybrid {\bf P}hoto-{\bf D}iodes} were replaced by SiPMs\footnote{{\bf Si}licon {\bf P}hoto-{\bf M}ultipliers} due to bad performance. The SiPM readout was designed as a drop-in replacement to keep most of the readout chain. The SiPMs were arranged on a newly produced PCB\footnote{{\bf P}rinted {\bf C}ircuit {\bf B}oard} to match the position of the pixels of the HPDs. The arrangement of the SiPMs is shown in Fig. \ref{sipmPcb}. It can be seen that the new PCB has 18 SiPMs in the position where the 18 pixels of the HPDs were.
+The installed SiPM type was produced by Hamamatsu and is identical to a Hamamatsu S10931-050. It has an area of (3x3) mm$^2$ and comes with an SMD type housing. The cell pitch is 50 $\mu$m. A key feature of the device is the change of the breakdown voltage with respect to the temperature. The manufacturer specifies this quantity to be 56 $\frac{\text{mV}}{\text{K}}$.
+Because HO has two layers of scintillator in ring 0, whereas rings $\pm$1 and $\pm$2 have only one layer of scintillator, the number of fibers arriving at a single SiPM is larger in ring 0. As a consequence, the fibers cannot be arranged such that they completely fit inside the area of an SiPM. Therefore, a light mixer is installed between the ends of the fibers and the SiPM surface in ring 0. This light mixer distributes the light of the fibers uniformly over an SiPM's surface and compensates for light losses at the edges of an SiPM.
+With SiPMs being solid state devices and thus being rather sensitive to temperature changes it is inevitable to provide a controlled temperature environment for a stable operation of the devices. For this reason the PCBs carrying the SiPMs are equipped with Peltier elements on their backsides. Fig. \ref{peltier} shows a mounted Peltier element on a PCB.
 \subsection{System Performance}
 \subsubsection{Temperature}
-\begin{itemize}
-\item Stability of mounting board temperature
-\end{itemize}
-\subsubsection{Breakdown Voltage}
-\begin{itemize}
-\item Stability of breakdown voltage 
-\end{itemize}
+The features of an SiPM may change strongly with the temperature if not corrected for. For this reason it is important to control the temperature of an SiPM before studying other parameters to be sure that any observed change is not due to a change in the temperature. Fig. \ref{temperatureStability} shows  temperature deviations from a reference temperature plotted vs. time for a single carrier PCB. It is evident that the deviations stay within a range of 0.1 $^\circ$C which corresponds to a change of 5.6 mV in the bias voltage
+
 \subsubsection{Gain}
-\begin{itemize}
-\item Stability of gain
-\end{itemize}
-\subsubsection{Efficiency and Purity}
-\begin{itemize}
-\item Maybe Yusufs plot?
-\end{itemize}
+The gain determines the signal height that is produced by an SiPM and thus the measured charge in data taking. Hence, it is necessary to know the gain of an SiPM to be able to tell the number of photons that triggered the SiPM and get a measure of the deposited energy in the detector. HO uses two ways of determining the gain.
+The first is to use the dark noise spectrum of an SiPM that develops due to thermal exication of electrons in the active volume of an SiPM cell and the subsequent breakdown ot that cell. A gauss fit is performed to the pedestal peak and the peaks of one and two avalanches and from the distance of the peak positions the gain is calculated. The second method uses short light pulses from an LED that are led onto the SiPMs. When the light pulses contain not too many photons, the resulting signal distribution has a mean of N$\times$gain and a width of $\sqrt{\text{N}}\times$gain, assuming Poisson statistics for the uncertainty of the number of photons. Dividing the square of the measured width of the distribution by the measured mean, one obtains the gain of an SiPM.
+
+
+\subsubsection{Breakdown Voltage}
+The gain of an SiPM depends on the voltage difference between the applied voltage and the breakdown voltage of the device. It is therefore necessary to have reliable means of determining the breakdown voltage of an SiPM in order to keep the gain stable. In HO there are two ways of measuring the breakdown voltage. The first one exploits again the dark noise spectrum of an SiPM. By measuring the gain with the dark noise spectrum for different bias voltages one may plot the gain versus the bias voltage. By fitting a straight line to the distribution and extrapolate to a gain of zero the breakdown voltage is found. The second way of gain determination uses an LED again. The collected charge is measured for different bias voltages and then the relative derivative $\frac{\text{dS}}{\text{SdV}}$ is calculated. The resulting distribution has a maximum where the measured signal changes most with the bias voltage which is taken as the bias voltage.
