@@ -1,7 +1,8 @@
 \section{Studies with the Hadron Outer Calorimeter}
-In the barrel region of the CMS experiment the hadronic calorimeter has a outer component placed just behind the solenoid and before the first muon stations. This subdetector is called hadron outer
-(HO) calorimeter and it is a tail catcher for jets leaking out of the inner hadronic calorimeter. In this section first of all the HO system and its readout structure are introduced. Then some studies
-on detection efficiency of muons using 2012 data are shown. The analysis of the detection efficiency for cosmic muons from GRIN data is conclusively dealt with.
+In the barrel region of the CMS experiment the hadronic calorimeter has a outer component placed just behind the solenoid and before the first muon stations (BILD). 
+This subdetector is called the hadron outer (HO) calorimeter and is a tail catcher for jets leaking out of the inner hadronic calorimeter.
+In this section first of all the HO system and its readout structure are introduced.
+Then some studies on detection efficiency of muons using 2012 data are shown. The analysis of the detection efficiency for cosmic muons from GRIN data is conclusively dealt with.
 	\subsection{The Hadron Outer (HO) Calorimeter}
 		to do with Andreas
   		\subsubsection{Benefits and constraints}
@@ -13,11 +14,36 @@ on detection efficiency of muons using 2012 data are shown. The analysis of the 
   		\subsubsection{Readout setup}
 			to do with Andreas
 	\subsection{Studies on detection efficiency of prompt muons using 2012 data}
-		Due to the similarity of the setup of HO and MTT we expect to find answers to some open questions concerning the MTT concept like the muon detection capability of a
-		scintillator system e.g. Therefore the detection efficiency for tight ID muons in HO from 2012 data has been studied. For this purpose the muons have to fulfill some selection createria and they
-		have to be accepted by the HO system.
+		Due to the similarity of the setup of HO and MTT by studying the HO signals we expect to find answers to some open questions concerning the MTT concept like the muon detection capability of a
+		scintillator system  read out by SiPMs e.g. Therefore the detection efficiency for tight ID muons from 2012 data in HO has been studied.
+		For this purpose the muons have to fulfill some selection createria and they have to be accepted by the HO system since HO has inefficient areas due to the supporting structures of CMS like the
+		chimney (REF).
 		\subsubsection{Muon selection and acceptance by HO}
-			todo
+			To be sure to have no fake muons going through the HO tiles some selection createria are set for the reconstructed muons.
+			First of all only reco::muons which are also global muons are chosen.
+			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
+			The muons also should have a tight ID.
+			In (REF) all requirements on muons to be a tight muon are given.
+			Essential for the tight ID definition is the consideration of good primary vertices.
+			For this purpose a good vertex filter is applied:
+			Using the vertex collection \textit{offlinePrimaryVertices} only vertices are chosen whose:
+			\begin{enumerate}
+				\item minimum number of degrees of freedom is 4,
+				\item maximum distance on the $z$ axis to the origin of the coordinate system is 24\,cm,
+				\item maximum $d_0$ is 2\,cm.
+			\end{enumerate}
+			Furthermore all these tight muons have to have an particle flow based combined relative isolation defined as
+			\begin{equation}
+				\frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
+			\end{equation}
+			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $dR = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
+			Since the HO system doesn't cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with elecronic inefficiencies the
+			cut on $|\eta_mu|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be requiered. 
+			This is done using the \textit{MuonHOAcceptance} class implemented in the software framework of CMS.
+			\textit{MuonHOAcceptance} knows the entire HO geometry and allows boolean decisions on whether a muon is in the bare geometrical acceptance of the HO or not and also whether a muon is in the acceptance region of
+			tiles which are working properly.
+			Furthermore it allows to identify a muon being in the acceptance of a SiPM tile or in a HPD tile.
+			These boolean operations can be done requiring a safety distance from the edges of the tiles to be sure that transitions on the edges don't mess the study.
 		\subsubsection{Matching of the muons to the corresponding HO tiles using standard tracking tools}
 			todo
 		\subsubsection{Detection efficiency for prompt muons}
