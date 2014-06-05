@@ -1,3 +1,19 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{General description}
+\author{Pooth}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
 \section{Abstract .... to be written at the end ....}
 Triggering on high $p_t$ muons at the projected high luminosity LHC (HL-LHC) with an expected instantaneous luminosity of $10^{35}/(\mathrm{cm}^2 \cdot\mathrm{s})$ will be 
 one major challenge for the CMS experiment from 2023 on. With the {\bf M}uon  {\bf T}rack fast {\bf T}ag (MTT) a new detector subsystem is proposed that can help to keep the 
@@ -13,14 +29,14 @@ time. Various scenarios are under discussion to increase the amount of data to s
 crossing frequency and higher number of protons per bunch. The CMS roadmap for the future long shutdowns in shown in Figure~\ref{fig:upgrade_planning}.
 
 To trigger on high $p_t$ muons at $10^{35}/(\mathrm{cm}^2 \cdot\mathrm{s})$ while keeping the Level-1 trigger rate low the trigger concept needs to be extended. With the MTT (see 
-Figure~\ref{fig:schedule_concept}, right), a fast 2D trigger system located between the CMS solenoid and the inner muon stations is proposed in~\cite{mtt_concept} to cope with high 
+Figure~\ref{fig:schedule_concept}, right), a fast 2D trigger system located between the CMS solenoid and the inner muon stations is proposed in~(REFREF) to cope with high 
 muon rates without increasing the $p_t$ thresholds. Just increasing the threshold would be an inefficient way as shown in Figure~\ref{fig:pt_threshold}, mainly due to poorly 
 reconstructed muon $p_t$ on Level-1. 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.45\textwidth]{Figures/pooth/schedule.pdf}
 \includegraphics[width=0.52\textwidth]{Figures/pooth/mtt_concept_a.pdf}
-\caption{Left: The integrated luminosity versus time for the periods before, between and after the three long shutdowns to come~\cite{schedule}. Right: The Muon Track fast Tag concept~\cite{mtt_concept}. } 
+\caption{Left: The integrated luminosity versus time for the periods before, between and after the three long shutdowns to come~(REFREF). Right: The Muon Track fast Tag concept~(REFREF) } 
 \label{fig:schedule_concept}
 \end{figure}
 
@@ -35,8 +51,8 @@ an excellent $p_t$ measurement and with the MTT it is possible to define regions
 ambiguities at very high luminosities (ghost rejection). A measured ghost and a possible solution to resolve it are shown in Figure~\ref{fig:ghosts}.
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{Figures/pooth/Ghostevent01.png}
-\includegraphics[width=\textwidth]{Figures/pooth/Ghostevent02.png}
+\includegraphics[width=\textwidth]{Figures/pooth/GhostEvent01.png}
+\includegraphics[width=\textwidth]{Figures/pooth/GhostEvent02.png}
 \caption{Top: Four reconstructed muons (RECO mu, green crosses) with only two generated muons in the detector (GEN mu, black crosses). 
 Bottom: The same event and in addition the HO system overlaid (individual HO tiles shown as pink boxes).} 
 \label{fig:ghosts}
@@ -44,13 +60,13 @@ Bottom: The same event and in addition the HO system overlaid (individual HO til
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{Figures/pooth/upgrade_planning.pdf}\\
-\caption{Upgrade planning~\cite{schedule}.} 
+\caption{Upgrade planning~(REFREF).} 
 \label{fig:upgrade_planning}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.5\textwidth]{Figures/pooth/pt_threshold.pdf}
-\caption{Rates for different trigger levels as a function of the muon $p_t$ threshold~\cite{pt_threshold}.}
+\caption{Rates for different trigger levels as a function of the muon $p_t$ threshold~(REFREF).}
 \label{fig:pt_threshold}
 \end{figure}
 
@@ -67,3 +83,5 @@ This document is structured as follows:
 \item MTT simulations in CMSSW
 \item Ghost studies and interplay between MTT and existing CMS muon trigger
 \end{itemize}
+
+\end{document}  
