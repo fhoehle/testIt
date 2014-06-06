@@ -19,6 +19,7 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 		For this purpose the muons have to fulfill some selection createria and they have to be accepted by the HO system since HO has inefficient areas due to the supporting structures of CMS like the
 		chimney (REF).
 		\subsubsection{Muon selection and acceptance by HO}
+		\label{thesectionhere}
 			To be sure to have no fake muons going through the HO tiles some selection createria are set for the reconstructed muons.
 			First of all only reco::muons which are also global muons are chosen.
 			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
@@ -41,11 +42,17 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			cut on $|\eta_mu|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be requiered. 
 			This is done using the \textit{MuonHOAcceptance} class implemented in the software framework of CMS.
 			\textit{MuonHOAcceptance} knows the entire HO geometry and allows boolean decisions on whether a muon is in the bare geometrical acceptance of the HO or not and also whether a muon is in the acceptance region of
-			tiles which are working properly.
-			Furthermore it allows to identify a muon being in the acceptance of a SiPM tile or in a HPD tile.
-			These boolean operations can be done requiring a safety distance from the edges of the tiles to be sure that transitions on the edges don't mess the study.
-		\subsubsection{Matching of the muons to the corresponding HO tiles using standard tracking tools}
-			todo
+			tiles which are working properly. (BILD)
+			Furthermore it allows to identify a muon being in the acceptance of a SiPM tile or in a HPD tile. (BILD)
+			These boolean operations can be done requiring a safety distance from the edges of the tiles to be sure that transitions on the edges don't mess the study. (BILD)
+		\subsubsection{Matching of the muons to the corresponding HO tiles}
+			Being selected as in \ref{thesectionhere} described the muons now have to be matched to the correct HO tiles.
+			This is done by using the standard tracking tool \textit{TrackDetMatchInfo}.
+			Doing a helix approximation this tool collects the information along a track.
+			Among this information also HO related parts like the detector IDs of the tiles crossed by the muon, the reconstructed hits in these tiles or the global position of the track at HO etc. can be
+			found.
+			If one of the IDs of the tiles crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, then this muon is matched to that tile.
+			Since no additional requirements like to have a certain energy e.g. on the reconstructed hits are done, this procedure is a very loose one.
 		\subsubsection{Detection efficiency for prompt muons}
 			todo
 	\subsection{Studies on detection efficiency of cosmic muons using the GRIN data} 
