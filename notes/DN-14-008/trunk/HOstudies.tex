@@ -43,31 +43,32 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			This is done using the \textit{MuonHOAcceptance} class implemented in the software framework of CMS.
 			\textit{MuonHOAcceptance} knows the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the acceptance region of
 			tiles which are working properly.
-			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (figure ho_acceptance).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/deadregions.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/sipmregions.png}
-				\caption{Left: In the $\eta$-$\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues. Right: In red rectangles the
+				\caption{Left: In the $\eta-\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues. Right: In red rectangles the
 				acceptance regions for tiles with SiPM readout.}
 				\label{fig:ho_acceptance}
 			\end{figure}
-			In figure (simhits_in_acceptance) the $\eta$-$\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
-			According to it a large fraction of the accepted muons deposit energies predicted by Bethe-Bloch.
-			But there are muons going through HO tiles but depositing very low energies or no energy at all.
-			These muons are located particularly at the edges of the HO panels.
-			Having only scratched the HO tiles barely, the transition is only enough for either very low depositions or nothing.
-			Therefore it is helpful to reject muons flying in these regions by defining safety distances from the edges of the panels as it is shown on the right hand side in figure (simhits_in_acceptance).
+			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (figure \ref{fig:ho_acceptance}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_wo_deta_dphi.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
-				\caption{Left: $\eta$-$\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
+				\caption{Left: $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
 				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by Bethe-Bloch formula, which
 				predicts an energy deposition of > 1.4\,MeV for muons going through 1\,cm material (REF). Right: The same distribution with the safety distances from the edges of the HO panels.}
 				\label{fig:simhits_in_acceptance}
 			\end{figure}
-			By having these safety distances there is only a very small fraction of muons depositing low energies with uniform $\eta$-$\phi$ distributions in the panels due to the insensitive areas between
+			In figure \ref{fig:simhits_in_acceptance} the $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
+			According to it a large fraction of the accepted muons deposit energies predicted by Bethe-Bloch.
+			But there are muons going through HO tiles but depositing very low energies or no energy at all.
+			These muons are located particularly at the edges of the HO panels.
+			Having only scratched the HO tiles barely, the transition is only enough for either very low depositions or nothing.
+			Therefore it is helpful to reject muons flying in these regions by defining safety distances from the edges of the panels as it is shown on the right hand side in figure
+			\ref{fig:simhits_in_acceptance}.
+			By having these safety distances there is only a very small fraction of muons depositing low energies with uniform $\eta-\phi$ distributions in the panels due to the insensitive areas between
 			the tiles.
 		\subsubsection{Matching of the muons to the corresponding HO tiles}
 			Being selected as in \ref{thesectionhere} described the muons now have to be matched to the correct HO tiles.
