@@ -15,7 +15,7 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			to do with Andreas
 	\subsection{Studies on detection efficiency of prompt muons using 2012 data}
 		Due to the similarity of the setup of HO and MTT by studying the HO signals we expect to find answers to some open questions concerning the MTT concept like the muon detection capability of a
-		scintillator system  read out by SiPMs e.g. Therefore the detection efficiency for tight ID muons from 2012 data in HO has been studied.
+		scintillator system  read out by SiPMs e.g. Therefore the detection efficiency for tight ID muons from  Run A of the 2012 data in HO has been studied.
 		For this purpose the muons have to fulfill some selection createria and they have to be accepted by the HO system since HO has inefficient areas due to the supporting structures of CMS like the
 		chimney (REF).
 		\subsubsection{Muon selection and acceptance by HO}
@@ -39,7 +39,7 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			\end{equation}
 			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $dR = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
 			Since the HO system doesn't cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with elecronic inefficiencies the
-			cut on $|\eta_mu|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be requiered. 
+			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be requiered. 
 			This is done using the \textit{MuonHOAcceptance} class implemented in the software framework of CMS.
 			\textit{MuonHOAcceptance} knows the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the acceptance region of
 			tiles which are working properly.
@@ -58,30 +58,36 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
 				\caption{Left: $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
 				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by Bethe-Bloch formula, which
-				predicts an energy deposition of > 1.4\,MeV for muons going through 1\,cm material (REF). Right: The same distribution with the safety distances from the edges of the HO panels.}
+				predicts an energy deposition of > 1.4\,MeV for muons going through 1\,cm material (REF). Right: The same distribution with the safety distances $d\eta = 0.04$ and $d\phi = 0.017$ from the edges
+				of the HO panels.}
 				\label{fig:simhits_in_acceptance}
 			\end{figure}
 			In figure \ref{fig:simhits_in_acceptance} the $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
-			According to it a large fraction of the accepted muons deposit energies predicted by Bethe-Bloch.
+			According to it a large fraction of the accepted muons deposit energies predicted by Bethe-Bloch (REF).
 			But there are muons going through HO tiles but depositing very low energies or no energy at all.
 			These muons are located particularly at the edges of the HO panels.
 			Having only scratched the HO tiles barely, the transition is only enough for either very low depositions or nothing.
-			Therefore it is helpful to reject muons flying in these regions by defining safety distances from the edges of the panels as it is shown on the right hand side in figure
+			Therefore it is helpful to reject those muons by defining safety distances from the edges of the panels as it is shown on the right hand side in figure
 			\ref{fig:simhits_in_acceptance}.
 			By having these safety distances there is only a very small fraction of muons depositing low energies with uniform $\eta-\phi$ distributions in the panels due to the insensitive areas between
 			the tiles.
+			With all these considerations 1.139.214 muons could be selected in Run A of 2012 data taking (CutFlow).
 		\subsubsection{Matching of the muons to the corresponding HO tiles}
 			Being selected as in \ref{thesectionhere} described the muons now have to be matched to the correct HO tiles.
 			This is done by using the standard tracking tool \textit{TrackDetMatchInfo}.
 			Doing a helix approximation this tool collects the information along a track.
 			Among this information also HO related parts like the detector IDs of the tiles crossed by the muon, the reconstructed hits in these tiles or the global position of the track at HO etc. can be
 			found.
-			If one of the IDs of the tiles crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, then this muon is matched to that tile.
+			If one of the IDs of the HO tiles crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, then this muon is matched to that tile.
 			Since no additional requirements like to have a certain energy e.g. on the reconstructed hits are done, this procedure is a very loose one.
 		\subsubsection{Detection efficiency for prompt muons}
-			todo
+			Even with the loose procedure of matching muons to the correct tiles only 694.920 muons could be matched to the HO tiles with a reconstructed hit in it. This leads to an efficiency of $61\,\%$.
+			This very low ration of matched muons to all selected muons is dominated by the noise behaviour of the HPDs as decribed in (REF).
+			Looking into the SiPM tiles only one expect a higher efficiency due to the better S/N ratio of the SiPMs compared to the HPDs.
+			But also here out of selected 79.745 muons only 44.682 muons can be matched which means an efficiency of $56\,\%$.
+			The reason for that very low efficiency is a known problem with the slow control of the first generation SiPMs used for the readout of $7\%$ of the HO tiles during 2012 data taking.    
 	\subsection{Studies on detection efficiency of cosmic muons using the GRIN data} 
-		todo
+		With the next generation SiPMs instrumented one can look into the cosmic data taken with the HO during the global run in november 2013 (GRIN).
 		\subsubsection{Detector setup for the Global Run In November (GRIN)}
 			todo
 		\subsubsection{Purity studies}
