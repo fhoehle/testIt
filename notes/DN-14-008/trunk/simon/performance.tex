@@ -1,0 +1,29 @@
+\subsection{Prototype performance}
+\label{section:simon/performance}
+To determine the usefulness of the MTT prototype module as a muon trigger calculations of the signal purity and the detection efficiency are presented in this chapter.
+\subsubsection{Signal purity}
+In addition to the detection efficiency, which is the most important attribute of a trigger detector, the signal purity is of great importance. Since all prototype studies have been done with cosmic muons the purity is also calculated with respect to cosmics. Purity is hereby defined as the probability, that a detector pulse over a certain threshold has been triggered by a real (cosmic) muon passing the detector and not due to high SiPM noise. To calculate this purity one needs to know the fraction of muon pulses and SiPM noise pulses for any given threshold. To get these fractions two measurements of pulse rate over threshold have been performed. First pulses of the whole prototype module were recorded, including noise and muon pulses (total rate). Secondly the signal rate of the same module was recorded without the scintillator and thereby eliminating the muon signals (noise rate). The purity can then be calculated by:
+\begin{equation}
+ \text{purity} = \frac{\text{muon rate}}{\text{total rate}} = \frac{\text{total rate} - \text{noise rate}}{\text{total rate}}
+\end{equation}
+The result of these measurements and the calculated purity for the sum signal are shown in Figure \ref{image:Figures/simon/performance/purity.png}. With a trigger threshold of around $40\,\text{mV}$ a signal purity of more than $99.9\,\%$ is reached.
+\image{width = .6\textwidth}{Figures/simon/performance/purity.png}{Purity of the prototype sum signals over threshold}
+%
+\subsubsection{Detector efficiency}
+When building a trigger system, a high detection efficiency is of great importance. Therefore the efficiency of the MTT prototype is determined as a function of the potential trigger threshold from the combination of all measurements from Section \ref{section:simon/optimization/recoupling} (recoupling the SiPMs to the scintillator) and Section \ref{section:simon/optimization/rewrapping} (rewrapping the scintillator). The calculation and error estimation follows the guidelines given in ((REF)). The result is shown in Figure \ref{image:Figures/simon/performance/KombiEffBayes_Square_Summe.png}. Figure \ref{image:Figures/simon/performance/KombiEffBayes_Square_Summe.png} a) shows the combined efficiency plotted against the full dynamic range of the module and Figure \ref{image:Figures/simon/performance/KombiEffBayes_Square_Summe.png} b) is an enhancement of the interesting region. The red shaded region in \ref{image:Figures/simon/performance/KombiEffBayes_Square_Summe.png} b) includes all efficiency lines calculated from each measurement of Section \ref{section:simon/optimization/rewrapping} and the green shaded area corresponds to the efficiency lines calculated from the measurements of Section \ref{section:simon/optimization/recoupling}. Therefore the shaded areas provide information about the systematic fluctuations of the efficiency due to the wrapping of the scintillator and the assembly of the module. The data points represent the combined efficiency for all measurements. For a trigger threshold between $50\,\text{mV}$ and $100\,\text{mV}$ the efficiency is compatible with $99.5\,\%$. For single thresholds the efficiency $\epsilon$ and its uncertainty can be extracted, for instance for $z = 65\,\text{mV}$:
+\begin{equation}
+ \epsilon(z = 65\,\text{mV}) = (99.49\,\pm\,0.04)\,\%
+\end{equation}
+The width of the shaded areas can be used as an conservative estimate for the systematic uncertainties at the given point. For instance at $z = 65\,\text{mV}$:
+\begin{equation}
+ \Delta\epsilon(\text{wrapping}) = 0.24\,\%
+\end{equation}
+and
+\begin{equation}
+ \Delta\epsilon(\text{assembly}) = 0.16\,\%.
+\end{equation}
+\doubleimage
+{width = .4\textwidth}{Figures/simon/performance/KombiEffBayes_Square_Summe.png}{Full dynamic range of the module}
+{width = .4\textwidth}{Figures/simon/performance/AreaFill_Zoom_Square_Summe.png}{Systematic influences}
+{Efficiency of the prototype detector over threshold for the sum signal, combined from several measurements}
+{.07\textwidth}
