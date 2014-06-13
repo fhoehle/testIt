@@ -58,7 +58,19 @@ The first is to use the dark noise spectrum of an SiPM that develops due to ther
 \end{minipage}
 \end{figure}
 The second method uses short light pulses from an LED that are led onto the SiPMs. When the light pulses contain not too many photons, the resulting signal distribution has a mean of N$\times$gain and a width of $\sqrt{\text{N}}\times$gain, assuming Poisson statistics for the uncertainty of the number of photons. Dividing the square of the measured width of the distribution by the measured mean, one obtains the gain of an SiPM. This is called the LED method.
-Before reviewing the comparability of the different methods it is necessesary to assure that the means of gain determination are stable in themselves with respect to time. The relative gain variation against time using the dark nosie spectrum is depicted in Fig. \ref{gainVsTime}. It can be found that for a single PCB the relative gain variation stays within a 2 \% frame. A histogram showing the relative gain variations for the same period for all installed SiPMs is plotted in Fig. \ref{gainHist}. The largest variations can be found to be within 3 \%. Having shown that the gain determination yields stable results, it is worthwhile to examine the correlation between the two ways of determining the gain. The result of a correlation plot is printed in Fig. \ref{gainCorr}. The plot shoes that the measured gain values are centralized around a specific value and no large deviation are found. However, it can be noticed that the mean gain value for the LED method is systematically shifted with respect to the results from the dark noise spectrum. This shift can be explained by the fact that the spectrum measured with the LED method is not exactly gaussian. This results in a shift towards higher gain values for this method. Once this offset has been characterized it would be possible to correct for it.
+Before reviewing the comparability of the different methods it is necessesary to assure that the means of gain determination are stable in themselves with respect to time. The relative gain variation against time using the dark nosie spectrum is depicted in Fig. \ref{gainVsTime}. It can be found that for a single PCB the relative gain variation stays within a 2 \% frame. A histogram showing the relative gain variations for the same period for all installed SiPMs is plotted in Fig. \ref{gainHist}. The largest variations can be found to be within 3 \%. Having shown that the gain determination yields stable results, it is worthwhile to examine the correlation between the two ways of determining the gain. The result of a correlation plot is printed in Fig. \ref{gainCorr}.
+\begin{figure}[b]
+\centering
+\begin{minipage}[t]{0.475\textwidth}
+\includegraphics[width=\textwidth]{Figures/kuensken/gainCorrelation.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.475\textwidth}
+\caption{Correlation}
+\label{gainCorr}
+\end{minipage}
+\end{figure}
+The plot shoes that the measured gain values are centralized around a specific value and no large deviation are found. However, it can be noticed that the mean gain value for the LED method is systematically shifted with respect to the results from the dark noise spectrum. This shift can be explained by the fact that the spectrum measured with the LED method is not exactly gaussian. This results in a shift towards higher gain values for this method. Once this offset has been characterized it would be possible to correct for it.
 
 \subsubsection{Breakdown Voltage}
 The gain of an SiPM depends on the voltage difference between the applied voltage and the breakdown voltage of the device. It is therefore necessary to have reliable means of determining the breakdown voltage of an SiPM in order to keep the gain stable. In HO there are two ways of measuring the breakdown voltage. The first one exploits again the dark noise spectrum of an SiPM. By measuring the gain using the dark noise spectrum for different bias voltages one may plot the gain versus the bias voltage. It is then possible to fit a straight line to the distribution and extrapolate to a gain of zero where the breakdown voltage is. This is referred to as the PED method. The second way of gain determination uses an LED again. The collected charge is measured for different bias voltages and then the relative derivative $\frac{\text{dS}}{\text{SdV}}$ is calculated. The resulting distribution has a maximum where the measured signal changes most with the bias voltage which is taken as the bias voltage. This method is referred to as the LED method.
@@ -74,15 +86,28 @@ The gain of an SiPM depends on the voltage difference between the applied voltag
 The determination of the breakdown voltage using the dark noise spectrum and the LED spectrum are shown in Fig. \ref{bvPed} and Fig. \ref{bvLed}, respectively.
 \begin{figure}[h]
 \centering
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[t]{0.39\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/bvLedScaled.png}
 \caption{Breakdown voltage determination using the relative derivative of LED spectra measured at different bias voltages.}
 \label{bvLed}
 \end{minipage}
 \hspace{0.5cm}
-\begin{minipage}[t]{0.475\textwidth}
-
+\begin{minipage}[t]{0.56\textwidth}
+\includegraphics[width=\textwidth]{Figures/kuensken/bvOverTime.png}
+\caption{BV vs Time}
+\label{bvVsTime}
 \end{minipage}
 \end{figure}
 The variation of the breakdown voltage for a set of SiPMs on a single mounting board versus time is presented in Fig. \ref{bvVsTime}. The employed method for the determination of the breakdown voltage is the PED method. The plots shows that the variation of the breakdown voltage stays within ??mV.
 Again, as there are two methods to determine the breakdown voltage, it is worthwhile to plot the correlation between the results of the two methods. The correlation plot is shown in Fig. \ref{bvCorr}. The data points align along a straight line which demonstrates a well defined linear relation between the values of the two methods. The spread of the breakdown voltages is due to the fact that not all devices have the same breakdown voltage. However, it can be noted that there is an offset between the two methods which shows itself in the y-intercept. This stems from the slightly different criteria for the determination of the breakdown voltage. Once the offset is determined the breakdown voltages can be corrected for that.
+\begin{figure}
+\centering
+\begin{minipage}[t]{0.475\textwidth}
+\includegraphics[width=\textwidth]{Figures/kuensken/bvCorrelation.png}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.475\textwidth}
+\caption{Correlation}
+\label{bvCorr}
+\end{minipage}
+\end{figure}
