@@ -59,7 +59,7 @@ The first is to use the dark noise spectrum of an SiPM that develops due to ther
 \end{figure}
 The second method uses short light pulses from an LED that are led onto the SiPMs. When the light pulses contain not too many photons, the resulting signal distribution has a mean of N$\times$gain and a width of $\sqrt{\text{N}}\times$gain, assuming Poisson statistics for the uncertainty of the number of photons. Dividing the square of the measured width of the distribution by the measured mean, one obtains the gain of an SiPM. This is called the LED method.
 Before reviewing the comparability of the different methods it is necessesary to assure that the means of gain determination are stable in themselves with respect to time. The relative gain variation against time using the dark nosie spectrum is depicted in Fig. \ref{gainVsTime}. It can be found that for a single PCB the relative gain variation stays within a 2 \% frame. A histogram showing the relative gain variations for the same period for all installed SiPMs is plotted in Fig. \ref{gainHist}. The largest variations can be found to be within 3 \%. Having shown that the gain determination yields stable results, it is worthwhile to examine the correlation between the two ways of determining the gain. The result of a correlation plot is printed in Fig. \ref{gainCorr}.
-\begin{figure}
+\begin{figure}[b]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainCorrelation.png}
@@ -86,13 +86,13 @@ The gain of an SiPM depends on the voltage difference between the applied voltag
 The determination of the breakdown voltage using the dark noise spectrum and the LED spectrum are shown in Fig. \ref{bvPed} and Fig. \ref{bvLed}, respectively.
 \begin{figure}[h]
 \centering
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[t]{0.39\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/bvLedScaled.png}
 \caption{Breakdown voltage determination using the relative derivative of LED spectra measured at different bias voltages.}
 \label{bvLed}
 \end{minipage}
 \hspace{0.5cm}
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[t]{0.56\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/bvOverTime.png}
 \caption{BV vs Time}
 \label{bvVsTime}
