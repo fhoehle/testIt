@@ -1,0 +1,18 @@
+\subsection{Experimental setup}
+\label{section:simon/setup}
+The studies presented in this node were all performed with the prototype shown in Figure \ref{image:Figures/simon/setup/M7_tp.png} (without top cover).\image{width = .5\textwidth}{Figures/simon/setup/M7_tp.png}{The $10 \times 10 \,\text{cm}^2$ prototype for the MTT system} The module consists of a fast $100 \times 100 \times 5 \,\text{mm}^3$ wide organic scintillator of type \emph{BC-404} by Saint-Gobain and is read out by two silicon photomultipliers of type \emph{S10362-33-100C} by Hamamatsu. The concept of a dual SiPM readout was chosen because of the high noise rate of SiPMs. The frontend electronics offers three signal outputs: both amplified SiPM signals and the amplified analogue sum of both signals. Since the dark noise in both SiPMs is independent the sum signal provides a better signal to noise ratio.
+
+The BC-404 scintillator was chosen for its fast timing capabilities (decay time of $1.8\,\text{ns}$) and the highest light output in the BC-400 series with the drawback of the shortest light attenuation length of $140\,\text{cm}$. The emission spectrum of the scintillator shown in Figure \ref{image:Figures/simon/setup/BC404-Spektrum.png} a) has its maximum at $\lambda_\text{max} = 408\,\text{nm}$ and is limited roughly in the range between $380\,\text{nm}$ and $500\,\text{nm}$. The scintillator is wrapped in PTFE tape (Polytetrafluoroethylene, widely known by DuPont's brand name \emph{Teflon}) which is a diffuse reflector.
+
+The S10362-33-100C SiPMs have an active area of $3 \times 3\,\text{mm}^2$ with a pixel pitch of $100\,\mu\text{m}$ which lead to a total pixel number of $300 \times 300$. Figure \ref{image:Figures/simon/setup/BC404-Spektrum.png} b) shows the emission spectrum of the familiar SiPM type S10362-33-050C, which has the same active area with smaller pixel pitch. The figure clearly shows that the detection efficiency of the S10362 series is highest for wavelengths between $400\,\text{nm}$ and $500\,\text{nm}$, which makes them a good match for the chosen scintillator BC-404. Dedicated investigations of Hamamatsu's SiPMs are presented in Chapter [REF THOMAS], the frontend electronics which amplifies the SiPM signals and regulates the bias voltages is described in Chapter [REF LARS].
+
+\doubleimage
+{width = .4\textwidth}{Figures/simon/setup/BC404-Spektrum.png}{Emission spectrum of BC-404 ((REF))}
+{width = .4\textwidth}{Figures/simon/setup/S10362-33-Spektrum.png}{Detection efficiency of S10362-33-050C type SiPM ((REF))}
+{The emission spectrum of Saint-Gobain scintillator BC-404 and spectral detection efficiency of Hamamatsu S10362-33-050C type SiPM match nicely}
+{.07\textwidth}
+
+The signal spectrum of the module, externally triggered with cosmic muons, is shown in Figure \ref{image:Figures/simon/setup/Wrapping2_PULSE_S_FIT.pdf}. A small inefficiency is visible in the pedestal peak at about $40\,\text{mV}$ which is clearly separated from the landau shaped signal distribution with the most probable value around $230\,\text{mV}$. The second peak at roughly $600\,\text{mV}$ is due to a saturation effect of the preamplifiers.
+\image{width = .6\textwidth}{Figures/simon/setup/Wrapping2_PULSE_S_FIT.pdf}{Pulse spectrum of the prototype module for cosmic muons}
+
+All measurements presented in the next chapter have been performed with cosmic muons, triggered by the coincidence of two scintillators read out with photomultiplier tubes. For older measurements the pulses were evaluated with a CAEN V965 12-bit QDC and later fully digitized with a CAEN VX1721 8-bit FADC, which allowed the calculation of the exact pulse height over baseline for every event.
