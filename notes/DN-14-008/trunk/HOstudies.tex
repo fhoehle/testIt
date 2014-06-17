@@ -15,7 +15,7 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			to do with Andreas
 	\subsection{Studies on detection efficiency of prompt muons using 2012 data}
 		Due to the similarity of the setup of HO and MTT by studying the HO signals we expect to find answers to some open questions concerning the MTT concept like the muon detection capability of a
-		scintillator system  read out by SiPMs e.g. Therefore the detection efficiency for tight ID muons from  Run A of the 2012 data in HO has been studied.
+		scintillator system  read out by SiPMs e.g. Therefore the detection efficiency for tight ID muons from Run A of the 2012 data in HO has been studied.
 		For this purpose the muons have to fulfill some selection createria and they have to be accepted by the HO system since HO has inefficient areas due to the supporting structures of CMS like the
 		chimney (REF).
 		\subsubsection{Muon selection and acceptance by HO}
@@ -87,24 +87,34 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			But also here out of selected 79.745 muons only 44.682 muons can be matched which means an efficiency of $56\,\%$.
 			The reason for that very low efficiency is a known problem with the slow control of the first generation SiPMs used for the readout of $7\%$ of the HO tiles during 2012 data taking.    
 	\subsection{Studies on detection efficiency of cosmic muons using the GRIN data} 
-		In November 2013 for one week CMS has taken data of cosmic muons during a global run (GRIN).
-		The aim was to check the functionality of subsystems after the long break due to the long shutdown.
-		However the data can also be used partially to analyse the response behaviour of different upgraded subsystems, like HO. 
-		This system namely was partially in use during GRIN and the following parts were instrumented with the next generation SiPMs with better functionality:
-		\begin{itemize}
-			\item All YB-2, YB-1,
-			\item 7 of 12 sectors in YB0 (1,4,5,7,8,9,12),
-			\item 2 of 12 sectors in YB+1 (3,4),
-			\item 2 of 12 sectors in YB+2 (3,4)
-		\end{itemize}
-		Since the cosmic trigger was given by the moun system in the wheels YB+1, YB+2 and YB0 only a part of the data taken by the HO can be analyzed.
-		Additionally only a few runs are marked as good for HCal/HO.
-		These are 216232, 216311, 216312, 216420, 216423 and 216450.
-		
-		\subsubsection{Detector setup for the Global Run In November (GRIN)}
-			todo
+		In November 2013 for one week CMS has taken data of cosmic muons during a global run (GRIN = \textbf{G}lobal \textbf{R}un \textbf{I}n \textbf{N}ovember).
+		For this operation the magnet was switched off.
+		The aim was to check the functionality of subsystems after the long operation break due to the long shutdown 1.
+		However the data can also be used to study the response behaviour of different upgraded subsystems, like HO.
+		\subsubsection{Detector setup and preperation of the data}
+			This HO system was partially in use during GRIN and the following parts were instrumented with the next generation SiPMs:
+			\begin{itemize}
+				\item All YB-2, YB-1,
+				\item 7 of 12 sectors in YB0 (1,4,5,7,8,9,12),
+				\item 2 of 12 sectors in YB+1 (3,4),
+				\item 2 of 12 sectors in YB+2 (3,4)
+			\end{itemize}
+			These SiPMs have a better functionality compared to the first generation SiPMs used during the first run.
+			Since the cosmic trigger was given by the moun system in the wheels YB+1, YB+2 and YB0 only the data from the corresponding parts of HO can be analyzed.
+			Additionally only a few runs are marked as good for HCal/HO.
+			These are 216232, 216311, 216312, 216420, 216423 and 216450.
+			Having considered that the RAW data of muons was reconstructed according to the standard cosmic reconstruction procedure.
+			In this note we won't decribe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
+			For the calibration of the HO DIGIs it is possible to do a text calibration for the pedestals, the gains and the slopes of the signals.
+			For this study all pedestal corrections are set to 0, all gain corrections to 1 and also all slope corrections to 1.
+			This ensures the studied signal to be unbiased by the calibration itselfs. 
 		\subsubsection{Purity studies}
-			todo
+			In section (REF) the funtionality of SiPMs is already discussed.
+			There also the meaning of a finger spectrum is described.
+			Now concerning the HO data from GRIN such a spectrum can be studied.
+			Therefore the signal in one randomly chosen HO tile is considered, which should be dominated by the noise finger spectrum with several p.e. peaks.
+			In figure (REF) this signal distribution is seen for the tile XY.
+			
 		\subsubsection{Efficiency studies}
 			todo
 		\subsubsection{Working point for triggering muons}
