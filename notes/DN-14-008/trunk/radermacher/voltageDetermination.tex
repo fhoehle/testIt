@@ -1,3 +1,11 @@
-\section{Determination of bias voltage for new MTT-Prototyps}
-In order to get same signals independtly from our prototyps, a determination for the bias voltage is done by commiting the same gain for every SiPM. This should assure that QDC- and Peakheightspectra look the same. After verify the temperature regression coefficient the signal spectra is only depending of the gain given by the supplied bias voltage.
-To determinate the needed bias voltage a simple teststand is built up with an oscilloscope. The read out signal trace of $500\,\mathrm{\mu s}$ are  derived and afterwards   
+\subsection{Determination of Bias Voltage for new MTT-Prototyps}
+\label{sipmVoltDetermination}
+In order to get same signals independtly from our prototyps, a determination for the bias voltage is done by commiting the same gain for every SiPM. This should assure that QDC- and Peakheightspectra look the same regardless of the used prototyp module. After verify the temperature regression coefficient the signal spectra is only depending of the gain given by the supplied bias voltage.
+
+\subsubsection{Experimental Setup}
+To determinate the needed bias voltage to a specified gain a simple teststand is built up with an LeCroy WaveJet354A oscilloscope and a cooling box. With the oscilloscope a signal trace of $500\,\mathrm{\mu s}$ is taken from which a fingerspectrum is formed. Therefore the trace is derived after flattening and the peaks in the derived spectrum are searched. Afterwards the actual pulsepeaks are determined from the peaks out of the derived spectrum by searching of the next maximum after the slope you get from peaks of the derived spectrum. 
+In addition the minimum in front of the slope is determined as baseline belonging to the peak. Out of that the fingerspectrum is built by the pulseheight defined as the difference between pulsemaximum and the belonging baseline.
+From the fingerspectrum the gain is determined by identification of the first two p.e. and calculation of the gain defined as the difference between them. For the bias voltage a algorithm checks if the measured gain is in agreement with the specied one elsewise it modifies the voltage till it fits.
+
+\subsubsection{Distribution Analysis to Parameter Determination}
+In progress...    
