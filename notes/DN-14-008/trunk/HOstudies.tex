@@ -168,7 +168,42 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			  \item If $i$ between 1. and 7. timeslice (inclusively) add adc counts of timeslice $i-1$, $i+1$ and $i+2$ to the adc counts of $i$.
 			  \item If $i=0$, $i=8$ or $i=9$ take timeslices 2,3,4 and 5 for the integration.
 			\end{itemize}
-			In figure (REF) the integrated value of adc counts is 
+			In figure (\ref{fig:efficiency1x1}) the integrated value of adc counts from tiles where a muon went through is plotted.
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/efficiency1x1.png}
+				\caption{}
+				\label{fig:efficiency1x1}
+			\end{figure}
+			Thereby the main issue is the existence of tiles with very low signals (first accumulation).
+			Setting a threshold on the x axis, one can define an efficiency $e$
+			\begin{equation}
+				e = \frac{number of entries above threshold}{number of all entries},
+			\end{equation}
+			and the inefficiency $1-e$ respectively.
+			If we set the threshold to 60 adc counts, only 80 \% of muons have a signal above threshold.
+			The reason for this behaviour could be the first hint of detector inefficiency.
+			But also the functionality of the TrackDetMatchInfo tool can be doubted.
+			To study the latter the search for the correct tile is not restricted to one tile predicted by TrackDetMatchInfo but all neighbor tiles of it.
+			In this neighborhood the integration of timeslices is done as described above.
+			The tile is chosen to be the correct tile whose integrated adc counts are the highest.
+			In case of the matching tool being working correctly, the search in the neighbor tiles shouldn't have an effect on the signal distribution from figure \ref{fig:efficiency1x1}.
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/neighborhood.png}
+				\caption{}
+				\label{fig:neighborhood}
+			\end{figure}
+			But in figure \ref{fig:neighborhood} one can see clearly the improvement of the efficiency to 92\%.
+			Furthermore increasing the neighborhood to 7x7 has no effect on the distribution.
+			This means that the TrackDetMatchInfo is finding in 80\% of all cases the correct tile and in 12\% of all cases it misses the correct tile by one neighbor tile.
+			Another issue is the shape of the signal.
+			A gaus convoluted Landau fit on the signal (above threshold) is shown in figure (REF).
+			Obviously the shape can not be described with the fit.
+			The reason is the difference in distances of tiles from the readout modules.
+			The intensity of the signals namely drops with the length of the fibre leading it to the SiPMs.
+			Therefore one has to compare only tiles with same distances to the readout modules.
+			This is done in figure (REF) resulting in a much better fit.  
 		\subsubsection{Working point for triggering muons}
 		\label{working_point}
 			todo
