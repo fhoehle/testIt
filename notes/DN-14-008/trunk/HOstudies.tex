@@ -103,19 +103,72 @@ Then some studies on detection efficiency of muons using 2012 data are shown. Th
 			Since the cosmic trigger was given by the moun system in the wheels YB+1, YB+2 and YB0 only the data from the corresponding parts of HO can be analyzed.
 			Additionally only a few runs are marked as good for HCal/HO.
 			These are 216232, 216311, 216312, 216420, 216423 and 216450.
-			Having considered that the RAW data of muons was reconstructed according to the standard cosmic reconstruction procedure.
+			Having considered that the RAW data of muons has to be reconstructed according to the standard cosmic reconstruction procedure of CMS.
 			In this note we won't decribe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
-			For the calibration of the HO DIGIs it is possible to do a text calibration for the pedestals, the gains and the slopes of the signals.
-			For this study all pedestal corrections are set to 0, all gain corrections to 1 and also all slope corrections to 1.
-			This ensures the studied signal to be unbiased by the calibration itselfs. 
+		\subsubsection{HO DIGI information}
+			The CMS data format DIGI contains the information of the detector response to a physical process like a muon transition.
+			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (adc) for 10 timeslices in a HO DIGI.
+			Each timeslice takes 25\,ns.
+			For the calibration of the HO DIGIs it is possible to use several records registered during the data taking, like the HCalPedestalRecord or HCalElectronicsRecord.
+			A text calibration can be alternatively done using text files filled with calibration values determined by hand.
+			For this study such a text calibration is done setting all pedestal corrections to 0, all gain corrections to 1 and all slope corrections to 1.
+			This ensures the studied signal to be unbiased by the calibration itself, since for such short runs like GRIN the calibration by records are not so expressive.
+			In figure (\ref{fig:adc_vs_ts}) the calibrated adc counts versus the timeslices in which they are measured are shown.
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/adc_vs_ts.png}
+				\caption{The calibrated adc counts versus the timeslices in which they are measured: In blue a tile is chosen, where no muon is gone through (noise). In red is a tile with muon transition shown.}
+				\label{fig:adc_vs_ts}
+			\end{figure}
+			In case of muon transition the measured adc counts in the corresponding timeslices are clearly higher then without muon transition.
+			This means that distinguishing muon signal from noise should be possible.
 		\subsubsection{Purity studies}
 			In section (REF) the funtionality of SiPMs is already discussed.
-			There also the meaning of a finger spectrum is described.
+			There the meaning of a finger spectrum as the signal of a SiPM is also described.
 			Now concerning the HO data from GRIN such a spectrum can be studied.
-			Therefore the signal in one randomly chosen HO tile is considered, which should be dominated by the noise finger spectrum with several p.e. peaks.
-			In figure (REF) this signal distribution is seen for the tile XY.
-			
+			Therefore the signal in one randomly chosen HO tile is considered.
+			In figure (\ref{fig:noise_low}) this signal distribution as a function of adc counts is shown for the tile XY.
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/noise_low.png}
+				\caption{The signal distribution as a function of adc counts for the tile XY.}
+				\label{fig:noise_low}
+			\end{figure}
+			The first peak is the pedestal of the signal being at 36 adc counts.
+			Furthermore there are 3 additional peaks corresponding to the up to 3 firing pixels of the SiPM.
+			The distance between the peaks, which is the gain of the SiPM, is at 6 adc counts.
+			All these observations are consistent with the expectations from the HO detector performance group (REF to ANDREAS).
+			Since this study is done with only one tile per event the statistic is relatively low.
+			To get more statistic and study the behaviour of the noise distribution with this higher statistic all tiles per event without a muon transition are considered (figure (REF)).
+			To do this first of all the tile where the muon went through has to be traced.
+			This is done by the TrackDetMatchInfo tool described in subsection (REF).
+			Afterwards a safety region of 3x3 tiles around this traced tile is defined.
+			Now with all remaining tiles in all events the noise distribution can be considered (figure \ref{fig:noise_high}).
+			\begin{figure}[htbp]
+				\centering
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/noise_high.png}
+				\caption{The signal distribution as a function of adc counts for all tiles without muon transition.}
+				\label{fig:noise_high}
+			\end{figure}
+			The mean is at 36 adc counts as expected and seen as pedestal in the distribution with low statistics (finger spectrum).
+			Also the fingers are not visible anymore.
+			The reason for this is the smearing of the finger due to their statistical uncertainty.
+			Furthermore the distribution drops steaply in the higher bins until there is no significant signal anymore.
+			It is therefore above 80 adc counts not expected the noise contribution in the signal to be significant.
+			With this a purity definition of the muon signal can be done.
+			In the section \ref{working_point} this value can be improved comparing the efficiency and the purity.
 		\subsubsection{Efficiency studies}
-			todo
+			After having a method to estimate the purity the muon signal has to be analyzed.
+			Using the TrackDetMatchInfo tool one can find the tiles where the muons are going through.
+			Once the correct tiles are traced, the DIGI information can be looked into.
+			For this purpose an integration over 4 timeslices is done to define the signal.
+			The choice of the correct 4 timeslices is important and is done as described following:
+			\begin{itemize}
+			  \item Find the timeslice $i$ with the highest adc counts.
+			  \item If $i$ between 1. and 7. timeslice (inclusively) add adc counts of timeslice $i-1$, $i+1$ and $i+2$ to the adc counts of $i$.
+			  \item If $i=0$, $i=8$ or $i=9$ take timeslices 2,3,4 and 5 for the integration.
+			\end{itemize}
+			In figure (REF) the integrated value of adc counts is 
 		\subsubsection{Working point for triggering muons}
+		\label{working_point}
 			todo
