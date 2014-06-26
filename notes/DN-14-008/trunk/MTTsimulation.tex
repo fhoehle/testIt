@@ -1,7 +1,43 @@
 \section{MTT Simulation Studies}
+For future physics studies with MTT this system has to be implemented in the standard CMS geometry description within CMSSW, the software framework of CMS.
+In this section the implementation of MTT in CMS is described.
 \subsection{MTT Geometry in CMSSW}
-\subsubsection{CMS Detector geometries in CMSSW}
+	\subsubsection{The geometry model of CMS}
+	The geometry model of CMS is based on Geant4 (REF).
+	It is constructed hierarchically and realized by the XML based detector description language (REF).
+	To make the geometry available on runtime the ESProducer \textbf{XMLIdealGeometryESSource} is used converting the XML description of the geommetry in a C++ model.
+	The tree structure of the geometry is then available as an instance of the \textbf{DDCompactView}.
+	In general there are two main classes of geometries existent in CMS.
+	For the tracking systems like the muon subdetectors and tracker etc. tracking geometries are available.
+	For the calorimeter systems one can use the caloriemeter geometry classes.
+	Details on this procedure can be found in (REF).
+	For alternative geometry models like the extended CMS geometry containing the MTT system it is nessessary to modify the ESProducer to load corresponding XML files.
+	In the next section the XML file of the MTT system is explained.
 \subsubsection{Description of the MTT geometry for different scenarios}
+	General:
+	All parts of the MTT geometry are arranged in a towards the muon system, especially towards the DT system oriented hierarchy.
+	This means that the MTT geometry is to be assigned to the tracking geometries.
+	Furthermore the local coordinate system of the MTT is chosen in a way, that the z axis concurs with the global z axis of the CMS.
+	The local y axis therefore is pointing outwards radially.
+	Hierarchy:
+	The basic unit of the MTT geometry is the \textbf{MTTTile}.
+	This unit is consisting of a scintillator of 10\,mm thickness wrapped by a polyethylene layer of 1\,mm thickness.
+	The sensitive material of the scintillator is a generic hydrocarbon with the mass composition of $m_H:m_C \approx 91,5\%:8,5\%$. 
+	The dimensions of the tiles dynamic and chosen to be fit in a MTTStrip.
+	Several MTTTiles can be arranged along the z axis in a \textbf{MTTStrip}.
+	In z direction the dimension of a strip is fixed at 2536\,mm since this is the width of the wheels. 
+	The strip itself is made off polystrene.
+	An array of strips in local x direction is called a layer.
+	Several layers in y direction than can be arranged in a panel which is the top unit in the hierarchy.
+	Numbering:
+	In CMS detector description each detector unit is unique by a 32 bit integer named DetId.
+	The composition of this integer is depicted in figure (REF).
+	The first 4 bits are reserved for the subdetector to which the considered detector unit belongs to.
+	Following 3 bits are marking the subsystem within the subdetector, like DT,CSC,RPC or in our case MTT within the muon system.
+	The remaining bits are to desribe the location of the detector unit in a certain wheel, station etc.
+	For MTT we used the 3 bits after the bits for the subsystem for the station, 4 bits for the sector, 3 bits for the wheel, 3 bits for the layer, 5 bits for the strip and 5 bits for the tile.
+	With this a MTT system consisting of 7 layers each with 31 strips can be numbered consecutively in a unique way.
+	Since this model allows tiles with only a few cm^2 area and since the planned MTT tiles are around 10x10\,cm^2 this numbering is more than sufficient. 
 \subsubsection{Setup for the SimHit generation}
 \subsubsection{DIGI generation}
 \subsubsection{to do}
