@@ -72,14 +72,28 @@ In this section the implementation of MTT in CMS is described.
 		For MTT we used the 3 bits after the bits for the subsystem, for the station, 4 bits for the sector, 3 bits for the wheel, 3 bits for the layer, 5 bits for the strip and 5 bits for the tile.
 		With this a MTT system consisting of 7 layers each with 31 strips per $\phi$-sector can be numbered consecutively in a unique way.
 		This would allow tiles with only a few $cm^2$ surface area and since the planned MTT tiles are around $10x10\,cm^2$ this numbering is more than sufficient.
-	\subsubsection{Setup for the SimHit generation}
+	\subsubsection{Setup and verification for the SimHit generation}
 		After having the geometry of MTT within the CMSSW the next step is to create tools to simulate hits when particles go through a MTT tile.
 		This task is handled by the MTTSensitiveDetector tool which is based on the Geant4 counterpart SensitiveDetector.
-		It collects information like energy loss or time of flight from the Geant4 step where a particle track goes through the sensitive detector.
-		Having this tool the general hit producer within CMSSW named OscarProducer which is responsible for producing hits 
-		the producer for simulated hits has to be trained to consider also hits from the MTT system.
-		This producer is called the OscarProducer  
+		It collects informations like energy loss, time of flight or position and creates a hit containing those information.
+		The next step is the introduction of this tool to the general hit producer within CMSSW named OscarProducer.
+		OscarProducer is responsible for producing hits in several subdetectors at the beginning of an event
+		This is called the SIM step.
+		(Furthermore the OscarProducer gives the subdetector algorithms constraints like energy thresholds etc.)
+		To verify the correct behaviour of the MTT simhit generator, one can look at the position of the hits in the MTT tiles.
+		For this purpose a muon gun placed in the point of origin of CMS was fired and the x and y coordinates of the simulated hits in MTT were plotted (figure REF).
+		The 12 MTT panels in 12 $\phi$ sectors can clearly be seen at a distance of $\approx4\,m$ in x and y direction.
 	\subsubsection{DIGI generation}
-	\subsubsection{to do}
-\subsection{First SimHit studies and their results}
-	All in this section shown first results are described in detail in (PAULREF).
+		The simulation of the hits with Geant4 based tools doesn't consider the detector response on the electronics site.
+		This information has to be added in the so called DIGI step.
+		Since the MTT tiles are under development and the front end electronics are not finally decided yet only a dummy digitizer could be wriiten for MTT.
+		In this dummy each SimHit becames a DIGI without any constraint on its parameters like energy etc.
+		Nevertheless this digitizer is very important for the future analyzes since the MixingModule of CMSSW requires it to mix pile up information to the signal.
+%\subsection{First SimHit studies and their results}
+	%All in this section shown first results are described in detail in (PAULREF).
+	%As explained in the introduction chapter the main tasks for MTT would be the assignment of standalone muon tracks from the muon system to the tracks from track trigger (REF).
+	%Therefore we have investigated the detection efficiency of L1Tracks in the MTT system.
+	%However since the MTT system has only one layer with only 1 cm thickness, we don't expect very high efficiencies like the CMS muon system with its 4 stations and 4\,m lever arm can provide.
+	%It is rather a feasibility analysis to see first hints of geometrical inefficiencies of the MTT.
+	%In figure (REF) the matching efficiency as a function of transverse momentum $p_t$ of muons is depicted.
+	%For this analysis a muon gun were used as described in the previous section.
