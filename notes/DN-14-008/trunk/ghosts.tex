@@ -21,7 +21,17 @@ A ghost can also be a detected muon that has the wrong time stamp and thus is as
 \subsubsection{Reco ghosts}
 Following the definition of ghosts, a RECO ghost is a reconstructed muon that has no matching generated (GEN) muon.\\
 For this matching for every RECO mu the nearest GEN mu in terms of delta R is determined. Additionally, the vertex position of the GEN and RECO mu are not allowed to be more than 0.1 cm away from each other in every of the three coordinates to assure that the RECO mu is not from a pileup event.\\
-The following investigations are performed with global muons only to have muon system and tracker information available for every muon. Furthermore the eta direction of the investigated muons is cut to be abs(eta) < 0.8 to check for muons in the barrel region only.\\
+The following investigations are performed with global muons only to have muon system and tracker information available for every muon. Furthermore the eta direction of the investigated muons is cut to be abs(eta) < 0.8 to check for muons in the barrel region only. The sample is a ZZ$\to$4l with 2012 conditions.\\
+$\Delta R$ is plotted for all GEN muons with their matched RECO muon. If two RECO muon match to the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
+The $\Delta R$ distribution is shown in figure \ref{DeltaRDistribution}. The most matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a slight maximuim at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.\\
+\begin{figure}[b]
+\centering
+\begin{minipage}[t]{0.95\textwidth}
+\includegraphics[width=\textwidth]{Figures/scheuch/Trennung.png}
+\caption{$\Delta R$ between all RECO muons and the matched GEN muon in all events and in events that are marked as ghost events}
+\label{DeltaRDistribution}
+\end{minipage}
+\end{figure}
 If one GEN mu has two or more associated RECO mu all but one of these RECO mu are considered to be ghosts. An event with at least one ghost is named ghost event.\\
 For the separation if a RECO mu is a ghost or real, a delta R cut is introduced. If the delta R between RECO mu and associated GEN mu is smaller than 0.1, the mu is considered to be a correctly reconstructed mu. If the delta R is greater than 0.1, it is considered to be a ghost.
 
