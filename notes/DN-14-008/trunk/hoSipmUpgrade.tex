@@ -4,7 +4,7 @@ HO\footnote{Short for {\bf O}uter {\bf H}CAL} is a detector system designed for 
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/hoTile.png}
-\caption{Scintillator with the wavelength shifting fibers in sigma shape.}
+\caption{Scintillator with the wavelength shifting fibers in sigma shape. Image from \cite{hoDesign}.}
 \label{kuenskenScintWithFiber}
 \end{minipage}
 \hspace{1cm}
@@ -13,20 +13,20 @@ HO\footnote{Short for {\bf O}uter {\bf H}CAL} is a detector system designed for 
 \end{minipage}
 \end{figure}
 From the wavelength shifting fibers the light is coupled into clear fibers to guide the light towards the photo-sensors. The tile's geometry is designed to match the towers of the HCAL in the barrel region which gives a tile size of 0.087$\times$0.087 in eta and phi. The scintillators are placed behind the solenoid in front of the first layer of the iron return yoke. While the rings $\pm$1 and $\pm$2 have only one layer of scintillator, ring 0 has a second layer of scintillator behind the iron yoke. This leads to specialties when bringing the light guiding fibers onto the photo-detectors, as is described in \ref{kuenskenHardwareDesign}.\\
-With the upgrade of the photon sensors to SiPMs it is now subject to studies in how far HO has capabilities of detecting muons as MIPs\footnote{{\bf M}inimum {\bf I}onizing {\bf P}article} and providing a discrimination between MIP signals and leaking jets. The muon identification capability may be a key feature when thinking of providing an additional muon tag to the muon trigger system with the help of HO. A more thorough description of HO can be found in \cite{hcalTDR} and \cite{hoDesign}.
+With the upgrade of the photon sensors to SiPMs it is now subject to studies in how far HO has capabilities of detecting muons as MIPs\footnote{{\bf M}inimum {\bf I}onizing {\bf P}article} and providing a discrimination between MIP signals and leaking jets. The muon identification capability may be a key feature when thinking of providing an additional muon tag to the muon trigger system with the help of HO. A more thorough description of HO can be found in \cite{hcalTDR} and \cite{hoDesign}, information on the SiPM upgrade is available in \cite{beniCalor}.
 \subsection{Hardware Design}\label{kuenskenHardwareDesign}
 In the first long shutdown of the LHC, the Outer Hadron Calorimeter (HO) was subject to upgrades. The previously used HPDs\footnote{{\bf H}ybrid {\bf P}hoto-{\bf D}iodes} were replaced by SiPMs\footnote{{\bf Si}licon {\bf P}hoto-{\bf M}ultipliers} due to bad performance. The SiPM readout was designed as a drop-in replacement to keep most of the readout chain. The SiPMs were arranged on a newly produced PCB\footnote{{\bf P}rinted {\bf C}ircuit {\bf B}oard} to match the position of the pixels of the HPDs. The arrangement of the SiPMs is shown in Fig. \ref{kuenskensipmPcb}.
 \begin{figure}[h]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/pcbSipm.png}
-\caption{PCB carrying 18 SiPMs. The white cirlce marks the position of the removed HPDs.}
+\caption{PCB carrying 18 SiPMs. The white cirlce marks the position of the removed HPDs. Image adapted from \cite{beniCalor}.}
 \label{kuenskensipmPcb}
 \end{minipage}
 \hspace{1cm}
 \begin{minipage}[t]{0.435\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/pcbPeltier.png}
-\caption{Backside of an HO PCB with the Peltier element attached.}
+\caption{Backside of an HO PCB with the Peltier element attached. Image adapted from \cite{beniCalor}.}
 \label{kuenskenpeltier}
 \end{minipage}
 \end{figure}
@@ -41,13 +41,13 @@ The features of an SiPM may change strongly with the temperature if not correcte
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/temperature.png}
-\caption{Fluctuation of temperature at a PCB plotted against time. The fluctuations stay within 0.1\,$^\circ$C.}
+\caption{Fluctuation of temperature at a PCB plotted against time. The fluctuations stay within 0.1\,$^\circ$C. Image from \cite{kuenskenCalor}.}
 \label{kuenskentemperatureStability}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{0.455\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainDetermination.png}
-\caption{Dark noise spectrum of an SiPM. plotted in red is the fit that is used for gain determination.}
+\caption{Dark noise spectrum of an SiPM. plotted in red is the fit that is used for gain determination. Taken from \cite{kuenskenCalor}.}
 \label{kuenskendarkNoise}
 \end{minipage}
 \end{figure}
@@ -60,13 +60,13 @@ The first is to use the dark noise spectrum of an SiPM that develops due to ther
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainOverTime.png}
-\caption{Relative gain variation against time using the dark noise spectrum for gain determination.}
+\caption{Relative gain variation against time using the dark noise spectrum for gain determination. Plot from \cite{kuenskenCalor}.}
 \label{kuenskengainVsTime}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainTotal.png}
-\caption{Histogram of all measured relative gain variations using the dark noise spectrum. The measurements were performed during the same period as is shown in Fig. \ref{kuenskengainVsTime}.}
+\caption{Histogram of all measured relative gain variations using the dark noise spectrum. The measurements were performed during the same period as is shown in Fig. \ref{kuenskengainVsTime}. Taken from \cite{kuenskenCalor}.}
 \label{kuenskengainHist}
 \end{minipage}
 \end{figure}
@@ -79,7 +79,7 @@ Before reviewing the comparability of the different methods it is necessesary to
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.475\textwidth}
-\caption{Correlation between the two methods for determining the gain. The values are distributed close to the design gain of 6\,ADC.}
+\caption{Correlation between the two methods for determining the gain. The values are distributed close to the design gain of 6\,ADC. Presented in \cite{kuenskenCalor}.}
 \label{kuenskengainCorr}
 \end{minipage}
 \end{figure}
@@ -91,7 +91,7 @@ The gain of an SiPM depends on the voltage difference between the applied voltag
 \centering
 %\begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=0.9\textwidth]{Figures/kuensken/bvPedDetermination.png}
-\caption{Determination of the breakdownvoltage of an SiPM using the gain from dark noise spectrums measured at different bias voltages.}
+\caption{Determination of the breakdownvoltage of an SiPM using the gain from dark noise spectrums measured at different bias voltages. Shown in \cite{kuenskenCalor}.}
 \label{kuenskenbvPed}
 %\end{minipage}
 %\hspace{0.5cm}
@@ -101,13 +101,13 @@ The determination of the breakdown voltage using the dark noise spectrum and the
 \centering
 \begin{minipage}[t]{0.39\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/bvLedScaled.png}
-\caption{Breakdown voltage determination using the relative derivative of LED spectra measured at different bias voltages.}
+\caption{Breakdown voltage determination using the relative derivative of LED spectra measured at different bias voltages. Image from \cite{kuenskenCalor}.}
 \label{kuenskenbvLed}
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[t]{0.56\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/bvOverTime.png}
-\caption{Distribution of breakdown voltage measured with the PED method.}
+\caption{Distribution of breakdown voltage measured with the PED method. Taken from \cite{kuenskenCalor}.}
 \label{kuenskenbvVsTime}
 \end{minipage}
 \end{figure}
@@ -120,7 +120,7 @@ Again, as there are two methods to determine the breakdown voltage, it is worthw
 \end{minipage}
 \hspace{0.5cm}
 \begin{minipage}[b]{0.475\textwidth}
-\caption{Correlation of the different methods for measuring the breakdown voltage.}
+\caption{Correlation of the different methods for measuring the breakdown voltage. Taken from \cite{kuenskenCalor}.}
 \label{kuenskenbvCorr}
 \end{minipage}
 \end{figure}
