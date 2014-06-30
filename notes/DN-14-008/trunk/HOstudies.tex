@@ -1,84 +1,89 @@
 \section{Studies with the Hadron Outer Calorimeter}
-	In this section some studies on detection efficiency of muons in the hadron outer calorimeter (HO) using 2012 data are shown.
+	In this section some studies on detection efficiency of high energetic muons in the hadron outer calorimeter (HO) using 2012 data are shown.
 	The analysis of the detection efficiency for cosmic muons from GRIN data is conclusively dealt with.
 	\subsection{Studies on detection efficiency of prompt muons using 2012 data}
-		Due to the similarity of the setup of HO and MTT, by studying the HO signals we expect to find answers to some open questions concerning the MTT concept like the muon detection capability of a
+		Due to the similarity of the setup of HO and MTT, by studying the HO signals we expect to find answers to some open questions concerning the MTT concept e.g. the muon detection capability of a
 		scintillator system read out by SiPMs e.g.
-		Therefore the detection efficiency for tight ID muons from Run A of the 2012 data in HO has been studied.
-		For this purpose the muons have to fulfill some selection createria and they also have to be accepted by the HO system.
-		The latter is necessary due to the inefficient areas of HO caused by the supporting structures of CMS like the chimney (REF).
+		In particular the detection efficiency for tight ID muons from Run A of the 2012 data in HO has been studied.
+		The used dataset (/SingleMu/Run2012A-22Jan2013-v1/RECO) is from the re-reconstruction campain Jan 2013.
+		Thereby the SingleMu stream contains several HLT trigger paths each with at least one triggered muon with different conditions like a $p_t$ requirement or an isolation criterion.
+		In this note we won't go into the details of the composition of the SingleMu stream.
+		The muons from this dataset have to fulfill some selection criteria and also they have to be accepted by the HO system.
+		The latter is necessary due to the inefficient areas of HO caused for example by the supporting structures of CMS like the chimney (\cite{JINST}).
 		\subsubsection{Muon selection and acceptance by HO}
 		\label{thesectionhere}
-			To be sure to have no fake muons going through the HO tiles some selection createria are set for the reconstructed muons.
-			First of all only reconstructed muons which are also global muons are chosen.
+			To be sure to have no fake muons going through the HO tiles some selection criteria are set for the reconstructed muons.
+			First of all only reconstructed global muons are chosen.
 			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
 			Furthermore the muons also have to have a tight ID.
-			In (REF) all requirements on muons to be a tight muon are given.
+			In \cite{CMS-PAS-MUO-10-002} and \cite{CMS-PAS-MUO-10-004} all requirements on muons to be a tight muon are given.
 			Essential for the tight ID definition is the consideration of good primary vertices.
 			For this purpose a good vertex filter is applied.
 			Using the vertex collection \textit{offlinePrimaryVertices} only vertices are chosen whose:
 			\begin{itemize}
 				\item minimum number of degrees of freedom is 4,
 				\item maximum distance on the $z$ axis to the origin of the coordinate system is 24\,cm,
-				\item maximum $d_0$ is 2\,cm.
+				\item maximum impact parameter $d_0$ is 2\,cm.
 			\end{itemize}
-			Additionally all these selected tight muons have to have an particle flow based combined relative isolation defined as
+			Additionally all these selected tight muons should have a particle flow based combined relative isolation $I$ defined as
 			\begin{equation}
-				\frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
+				I = \frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
 			\end{equation}
-			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $dR = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
-			Since the HO system doesn't cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with elecronic inefficiencies the
-			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be requiered.
-			This is done using the \textit{MuonHOAcceptance} class implemented in the software framework of CMS.
-			\textit{MuonHOAcceptance} knows the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the acceptance region of
-			tiles which are working properly.
+			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $\Delta R = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
+			Since the HO system does not cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with electronic inefficiencies the
+			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be required.
+			This is done by using the \textit{MuonHOAcceptance} class implemented in CMSSW.
+			\textit{MuonHOAcceptance} contains the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the
+			acceptance region of tiles which are working properly.
+			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (figure \ref{fig:ho_acceptance}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/deadregions.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/sipmregions.png}
-				\caption{Left: In the $\eta-\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues. Right: In red rectangles the
-				acceptance regions for tiles with SiPM readout.}
+				\caption{Left: In the $\eta-\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues \cite{JINST}. Right: In red
+				rectangles the acceptance regions for tiles with SiPM readout (status pre LS1).}
 				\label{fig:ho_acceptance}
 			\end{figure}
-			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (figure \ref{fig:ho_acceptance}).
+			In figure \ref{fig:simhits_in_acceptance} the $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_wo_deta_dphi.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
 				\caption{Left: $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
-				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by Bethe-Bloch formula, which
-				predicts an energy deposition of > 1.4\,MeV for muons going through 1\,cm material (REF). Right: The same distribution with the safety distances $d\eta = 0.04$ and $d\phi = 0.017$ from the edges
-				of the HO panels.}
+				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by the Bethe-Bloch formula,
+				which predicts an energy deposition of larger than 1.4\,MeV for muons going through 1\,cm scintillator material. Right: The same distribution with the safety distances $d\eta = 0.04$\,rad and
+				$d\phi = 0.017$\,rad from the edges of the HO panels.}
 				\label{fig:simhits_in_acceptance}
 			\end{figure}
-			In figure \ref{fig:simhits_in_acceptance} the $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
-			According to this figure a large fraction of the accepted muons deposit energies predicted by the Bethe-Bloch formula (REF).
+			According to this figure a large fraction of the accepted muons deposit energies predicted by the Bethe-Bloch formula.
 			However there are muons going through HO tiles but depositing very low energies or no energy at all.
 			These muons are located particularly at the edges of the HO panels.
-			Having only scratched the HO tiles, the transition is only enough for either very low depositions or nothing.
-			Therefore it is helpful to reject those muons by defining safety distances from the edges of the panels as it is shown on the right hand side in figure \ref{fig:simhits_in_acceptance}.
-			By having these safety distances there is only a very small fraction of muons depositing low energies with uniform $\eta-\phi$ distributions in the panels due to the insensitive areas between
-			the tiles.
-			With all these considerations 1.222.503 muons could be selected in Run A of 2012 data taking (CutFlow).
+			Having only scratched the HO tiles, the transition is obviously enough for very low depositions.
+			Therefore it is helpful to reject those muons by defining safety margins at the edges of the panels as it is shown on the right hand side in figure \ref{fig:simhits_in_acceptance}.
+			By having these safety margins there is only a very small fraction of muons depositing low energies.
+			These muons are uniformly distributed in $\eta-\phi$ due to the insensitive areas between the tiles.
+			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\phi<0$) one can see hits from muons.
+			Since this seems to be an error in the geometry record of the HO applied at the beginning of the events, muons in this region are not considered for the following analyses.
+			With all these considerations 1.222.503 events with exactly one muon could be selected for the analysis (CutFlow).
 		\subsubsection{Matching of the muons to the corresponding HO tiles}
-			Being selected as in \ref{thesectionhere} described the muons now have to be matched to the correct HO tiles.
+			Being selected as described in \ref{thesectionhere} the muons now schould be matched to the correct HO tiles.
 			This is done by using the standard tracking tool \textit{TrackDetMatchInfo}.
 			Doing a helix approximation this tool collects the information along a track.
 			Among this information also HO related parts like the detector IDs of the tiles crossed by the muon, the reconstructed hits in these tiles or the global position of the track at HO etc. can be
 			found.
-			If one of the HOIDs crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, then this muon is considered as matched.
-			Since no additional requirements on the reconstructed hits like to have a certain energy predicted by the Bethe Bloch formula e.g. are done, this procedure is very loose.
-			Nevertheless it illustrates a best case scenario for the detection efficiency of muons in HO.
+			If one of the HOIDs crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, than this muon is considered as matched.
+			Since no additional requirements on the reconstructed hits - e.g. a certain energy predicted by the Bethe Bloch formula - are done, this procedure is very loose.
+			Nevertheless it illustrates a best case scenario for the detection efficiency of muons in HO in 2012 data taking.
 		\subsubsection{Detection efficiency for prompt muons}
-			Since the HO system was read out partially by SiPMs and HPDs (REFtoSECTION), the muons flying in the tiles with SiPM readout were seperated from the muons with with HPD readout to see the impact of
-			the upgrade to the SiPM readout.
+			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{HOIntro}), the muons flying in the tiles with SiPM readout were seperated from the muons with with HPD readout to see
+			the impact of the upgrade to the SiPM readout.
 			Even with the loose procedure of matching muons to the correct tiles only 393.900 muons out of 1.222.503 could be matched to the HO tiles with HPD readout.
 			This leads to an efficiency of $\approx32\,\%$.
-			The reason of this very low efficiency is especially by the noise behaviour of the HPDs as decribed in (REFtoSECTION).
-			Looking into the SiPM tiles only one expect a higher efficiency due to the better S/N ratio of the SiPMs compared to the HPDs.
-			There out of selected 84.382 muons 72.720 muons can be matched.
+			The reason of this very low efficiency is given especially by the noise behaviour of the HPDs as decribed in \ref{HOIntro}.
+			Looking into the SiPM tiles only, one expect a higher efficiency due to the better S/N ratio of the SiPMs compared to the HPDs.
+			In this case out of selected 84.382 muons 72.720 muons can be matched.
 			This is an efficiency of $86\,\%$.
-			Although this efficency seems to be relatively high, the expected value for a real case with realistic matching createria should be lower.
+			Although this efficiency seems to be relatively high, the expected value for a real case with realistic matching criteria should be lower.
 			This is also reasonable since there is a known problem with the slow control of the first generation SiPMs used for the readout HO tiles during 2012 data taking.
 			Nevertheless the improvement compared to the HPDs is clearly seen.
 	\subsection{Studies on detection efficiency of cosmic muons using the GRIN data} 
@@ -87,26 +92,26 @@
 		The aim was to check the functionality of subsystems after the long operation break due to the first long shutdown.
 		However the data can also be used to study the response behaviour of different upgraded subsystems, like HO.
 		\subsubsection{Detector setup and preperation of the data}
-			The HO system was partially in use during GRIN and the following parts were instrumented with the next generation SiPMs:
+			During the GRIN the HO system was partially used and the following parts were instrumented with the next generation SiPMs:
 			\begin{itemize}
 				\item All YB-2, YB-1,
-				\item 7 of 12 sectors in YB0 (1,4,5,7,8,9,12),
-				\item 2 of 12 sectors in YB+1 (3,4),
-				\item 2 of 12 sectors in YB+2 (3,4)
+				\item 7 of 12 sectors in YB0 (1, 4, 5, 7, 8, 9, 12),
+				\item 2 of 12 sectors in YB+1 (3, 4),
+				\item 2 of 12 sectors in YB+2 (3, 4)
 			\end{itemize}
 			These SiPMs have a better functionality compared to the first generation SiPMs used during the first run.
 			Since the cosmic trigger was given by the moun system in the wheels YB+1, YB+2 and YB0 only the data from the corresponding parts of HO can be analyzed.
 			Additionally only a few runs are marked as good for HCal/HO.
 			These are 216232, 216311, 216312, 216420, 216423 and 216450.
-			Having considered that the RAW data of muons has to be reconstructed according to the standard cosmic reconstruction procedure of CMS.
-			In this note we won't decribe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
+			Having considered that, the RAW data of muons has to be reconstructed according to the standard cosmic reconstruction procedure of CMS.
+			In this note we do not describe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
 		\subsubsection{HO DIGI information}
 			The CMS data format DIGI contains the information of the detector response to a physical process like a muon transition.
 			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (adc) for 10 timeslices in a HO DIGI.
 			Each timeslice takes 25\,ns.
 			For the calibration of the HO DIGIs it is possible to use several records registered during the data taking, like the HCalPedestalRecord or HCalElectronicsRecord.
-			A text calibration can be alternatively done using text files filled with calibration values determined by hand.
-			For this study such a text calibration is done setting all pedestal corrections to 0, all gain corrections to 1 and all slope corrections to 1.
+			An alternative calibration can be done using text files filled with calibration values determined by hand.
+			For this study such a calibration is done setting all pedestal corrections to 0, all gain corrections to 1 and all slope corrections to 1.
 			This ensures the studied signal to be unbiased by the calibration itself, since for such short run periods like GRIN the calibration by records are not so expressive.
 			In figure \ref{fig:adc_vs_ts} the calibrated adc counts versus the timeslices in which they are measured are shown.
 			\begin{figure}[htbp]
@@ -115,12 +120,11 @@
 				\caption{The calibrated adc counts versus the timeslices in which they are measured: In blue a tile is chosen, where no muon is gone through (noise). In red is a tile with muon transition shown.}
 				\label{fig:adc_vs_ts}
 			\end{figure}
-			In case of muon transition the measured adc counts in the corresponding timeslices are clearly higher than without muon transition.
-			This means that distinguishing muon signal from noise should be possible.
+			In case of a muon transition the measured adc counts in the corresponding timeslice are clearly higher than without muon transition.
+			This means distinguishing muon signal from noise should be possible.
 		\subsubsection{Purity studies}
-			In section (REFtoTHOMASorLARS) the funtionality of SiPMs is already discussed.
-			There the meaning of a finger spectrum as the signal of a SiPM is also described.
-			Now concerning the HO data from GRIN such a spectrum can be studied.
+			In section \ref{sipmChapter} the funtionality of SiPMs is discussed.
+			Concerning the HO data from GRIN a so-called finger spectrum can be studied.
 			Therefore the signal in one randomly chosen HO tile is considered.
 			In figure \ref{fig:noise_low} this signal distribution as a function of adc counts is shown for the tile XY.
 			\begin{figure}[htbp]
@@ -177,11 +181,11 @@
 			\end{equation}
 			and the inefficiency $1-e$ respectively.
 			If we set the threshold to 60 adc counts, only 80 \% of muons have a signal above threshold.
-			The reason for this behaviour could be the first hint of detector inefficiency.
+			The reason for this behaviour could be the first hint of detector inefficiencies.
 			But also the functionality of the TrackDetMatchInfo tool can be doubted.
 			To study the latter the search for the correct tile is not restricted to one tile predicted by TrackDetMatchInfo but all neighbor tiles of it.
 			In this neighborhood the integration of timeslices is done as described above.
-			The tile is chosen to be the correct tile whose integrated adc counts are the highest.
+			The tile is chosen to be the correct tile if the value of the integrated adc counts is maximum.
 			In case of the matching tool being working correctly, the search in the neighbor tiles shouldn't have an effect on the signal distribution from figure \ref{fig:efficiency1x1}.
 			\begin{figure}[htbp]
 				\centering
