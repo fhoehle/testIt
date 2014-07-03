@@ -199,8 +199,8 @@
 			In figure \ref{fig:efficiency1x1} the integrated value of adc counts from tiles where a muon went through is plotted.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.45\textwidth]{Figures/erdogan/efficiency1x1.png}
-				\caption{}
+				\includegraphics[width=0.60\textwidth]{Figures/erdogan/efficiency1x1.png}
+				\caption{The signal in adc counts from tiles with muon transition}
 				\label{fig:efficiency1x1}
 			\end{figure}
 			The main issue is the existence of tiles with very low signals (first accumulation).
@@ -218,8 +218,9 @@
 			In case of the matching tool being working correctly, the search in the neighbor tiles should have no effect on the signal distribution from figure \ref{fig:efficiency1x1}.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.45\textwidth]{Figures/erdogan/neighborhood.png}
-				\caption{}
+				\includegraphics[width=0.60\textwidth]{Figures/erdogan/neighborhood.png}
+				\caption{Comparison of signals from muon tiles between two approaches. In red the signal distribution in case of looking only in the tile predicted by the matching tool. In blue in case of
+				considering a 3x3 grid around this tile.}
 				\label{fig:neighborhood}
 			\end{figure}
 			But in figure \ref{fig:neighborhood} one can see the improvement of the efficiency to 92\,\% choosing a search area of 3x3 around the predicted tile.
@@ -229,8 +230,8 @@
 			A gaus convoluted Landau fit on the signal (above threshold) is shown in figure \ref{fig:langaus_bad}.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.45\textwidth]{Figures/erdogan/langaus_bad.png}
-				\caption{}
+				\includegraphics[width=0.60\textwidth]{Figures/erdogan/langaus_bad.png}
+				\caption{The signal above a certain threshold from figure \ref{fig:efficiency1x1}. In red a gaus convoluted Landau fit which does not describe the behaviour very well.}
 				\label{fig:langaus_bad}
 			\end{figure}
 			Obviously the shape can not be described with this fit.
@@ -240,8 +241,9 @@
 			This is done in figure \ref{fig:langaus_good} resulting in a much better fit.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.45\textwidth]{Figures/erdogan/langaus_good.png}
-				\caption{}
+				\includegraphics[width=0.60\textwidth]{Figures/erdogan/langaus_good.png}
+				\caption{Signal distribution from tiles with muon transition which can be compared due to their distance to the readout modules. In red again a gaus convoluted Landau fit with much better
+				results.}
 				\label{fig:langaus_good}
 			\end{figure}
 		\subsubsection{Working point for triggering muons}
@@ -253,7 +255,7 @@
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/pur_eff.png}
-				\caption{}
+				\caption{Graph of purity and efficiency as a function of adc counts.}
 				\label{fig:pur_eff}
 			\end{figure}
 			The intersection point of both curves is at 39 adc counts.
