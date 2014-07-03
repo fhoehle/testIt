@@ -7,24 +7,26 @@
 		In particular the detection efficiency for tight ID muons from Run A of the 2012 data in HO has been studied.
 		The used dataset (/SingleMu/Run2012A-22Jan2013-v1/RECO) is from the re-reconstruction campain Jan 2013.
 		Thereby the SingleMu stream contains several HLT trigger paths each with at least one triggered muon with different conditions like a $p_t$ requirement or an isolation criterion.
-		In this note we won't go into the details of the composition of the SingleMu stream.
+		In this note we won't go into the details of the composition of the SingleMu stream. 
 		The muons from this dataset have to fulfill some selection criteria and also they have to be accepted by the HO system.
 		The latter is necessary due to the inefficient areas of HO caused for example by the supporting structures of CMS like the chimney (\cite{JINST}).
-		\subsubsection{Muon selection and acceptance by HO}
-		\label{thesectionhere}
-			To be sure to have no fake muons going through the HO tiles some selection criteria are set for the reconstructed muons.
-			First of all only reconstructed global muons are chosen.
-			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
-			Furthermore the muons also have to have a tight ID.
-			In \cite{CMS-PAPER-MUO-10-004} all requirements on muons to be a tight muon are given.
-			Essential for the tight ID definition is the consideration of good primary vertices.
-			For this purpose a good vertex filter is applied.
-			Using the vertex collection \textit{offlinePrimaryVertices} only vertices are chosen whose:
+		But before this selection can be done, the events have to fulfill some cleaning procedure.
+		First of all the events from beam background are removed.
+		Than a primary vertex filter is applied:
+		Using the vertex collection \textit{offlinePrimaryVertices} only the events are chosen, in which vertices could be found whose:
 			\begin{itemize}
 				\item minimum number of degrees of freedom is 4,
 				\item maximum distance on the $z$ axis to the origin of the coordinate system is 24\,cm,
 				\item maximum impact parameter $d_0$ is 2\,cm.
 			\end{itemize}
+		\subsubsection{Muon selection and acceptance by HO}
+		\label{thesectionhere}
+			To be sure to have no fake muons going through the HO tiles some selection criteria are set for the reconstructed muons.
+			First of all only reconstructed global muons are chosen.
+			Their transverse momentum $p_t$ should be greater than 26\,GeV.
+			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
+			Furthermore the muons also have to have a tight ID.
+			In \cite{CMS-PAPER-MUO-10-004} all requirements on muons to be a tight muon are given.
 			Additionally all these selected tight muons should have a particle flow based combined relative isolation $I$ defined as
 			\begin{equation}
 				I = \frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
@@ -59,12 +61,36 @@
 			However there are muons going through HO tiles but depositing very low energies or no energy at all.
 			These muons are located particularly at the edges of the HO panels.
 			Having only scratched the HO tiles, the transition is obviously enough for very low depositions.
-			Therefore it is helpful to reject those muons by defining safety margins at the edges of the panels as it is shown on the right hand side in figure \ref{fig:simhits_in_acceptance}.
+			Therefore it is helpful to reject those muons by defining safety margins $\Delta\eta$ and $\Delta\phi$ at the edges of the panels as it is shown on the right hand side in figure
+			\ref{fig:simhits_in_acceptance}.
 			By having these safety margins there is only a very small fraction of muons depositing low energies.
 			These muons are uniformly distributed in $\eta-\phi$ due to the insensitive areas between the tiles.
 			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\phi<0$) one can see hits from muons.
 			Since this seems to be an error in the geometry record of the HO applied at the beginning of the events, muons in this region are not considered for the following analyses.
-			With all these considerations 1.222.503 events with exactly one muon could be selected for the analysis (CutFlow).
+			Finally the safety margins in this study are chosen to be $\Delta\eta = 0.04$\,rad and $\Delta\phi = 0.017$\,rad.
+			With all these considerations 1.016.286 events with exactly one muon could be selected for the study.
+			In \ref{CutFlow} the cutflow can be seen.
+			Thereby in each case the remaining number of events after cut is shown.
+			\begin{center}
+			\label{CutFlow}
+				\begin{tabular}{|c|c|}
+					\hline
+					\textbf{cut}  & \textbf{events} \\ \hline \hline
+			 		no/initial    & 13.766.979 		\\ \hline
+			 		back. removal & 13.766.882 		\\ \hline
+			 		prim. vertex  &  8.188.753 		\\ \hline
+			 		$\eta$-$p_t$  &  8.188.753 		\\ \hline
+			 		one muon      &  4.174.334 		\\ \hline
+			 		tight id      &  3.820.149 		\\ \hline
+			 		isolation     &  1.574.816 		\\ \hline
+			 		geom. accept. &  1.016.286 		\\ \hline
+				\end{tabular}
+			\end{center}
+			 %Obviously there are only a few events from beam background.
+			 %The first cut with a big impact is the primary vertex filter.
+			 %With this filter $\approx 40$\% of all events were rejected.
+			 %By choosing only those events containing exactly one muon we lose approximately the half of the statistic.
+			 %The next cut with a big effect is than the isolation criterion.
 		\subsubsection{Matching of the muons to the corresponding HO tiles}
 			Being selected as described in \ref{thesectionhere} the muons now schould be matched to the correct HO tiles.
 			This is done by using the standard tracking tool \textit{TrackDetMatchInfo}.
