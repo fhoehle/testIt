@@ -32,7 +32,7 @@
 				I = \frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
 			\end{equation}
 			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $\Delta R = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
-			Since the HO system does not cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with electronic inefficiencies the
+			Since the HO system does not cover the whole $\eta$-$\varphi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with electronic inefficiencies the
 			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance has to be required.
 			This is done by using the \textbf{MuonHOAcceptance} class implemented in CMSSW.
 			\textbf{MuonHOAcceptance} contains the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the
@@ -42,32 +42,32 @@
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/deadregions.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/sipmregions.png}
-				\caption{Left: In the $\eta$-$\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues \cite{JINST}. Right: In red
+				\caption{Left: In the $\eta$-$\varphi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues \cite{JINST}. Right: In red
 				rectangles the acceptance regions for tiles with SiPM readout (status pre LS1).}
 				\label{fig:ho_acceptance}
 			\end{figure}
-			In figure \ref{fig:simhits_in_acceptance} the $\eta$-$\phi$ distribution of simulated hits of muons with $p_t = 100$\,GeV (muon gun) in HO is shown.
+			In figure \ref{fig:simhits_in_acceptance} the $\eta$-$\varphi$ distribution of simulated hits of muons with $p_t = 100$\,GeV (muon gun) in HO is shown.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_wo_deta_dphi.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
-				\caption{Left: $\eta$-$\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
+				\caption{Left: $\eta$-$\varphi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
 				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by the Bethe-Bloch formula,
 				which predicts an energy deposition of larger than 1.4\,MeV for muons going through 1\,cm scintillator material. Right: The same distribution with the safety distances $d\eta = 0.04$\,rad and
-				$d\phi = 0.017$\,rad from the edges of the HO panels.}
+				$d\varphi = 0.017$\,rad from the edges of the HO panels.}
 				\label{fig:simhits_in_acceptance}
 			\end{figure}
 			According to this figure a large fraction of the accepted muons deposit energies predicted by the Bethe-Bloch formula.
 			However there are muons going through HO tiles but depositing very low energies or no energy at all.
 			These muons are located particularly at the edges of the HO panels.
 			Having only scratched the HO tiles the transition is obviously enough for very low depositions.
-			Therefore it is helpful to reject those muons by defining safety margins $\Delta\eta$ and $\Delta\phi$ at the edges of the panels as it is shown on the right hand side in figure
+			Therefore it is helpful to reject those muons by defining safety margins $\Delta\eta$ and $\Delta\varphi$ at the edges of the panels as it is shown on the right hand side in figure
 			\ref{fig:simhits_in_acceptance}.
 			By having these safety margins there is only a small fraction of muons depositing low energies.
-			These muons are uniformly distributed in $\eta-\phi$ due to the insensitive areas between the tiles.
-			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\phi<0$) one can see hits from muons.
+			These muons are uniformly distributed in $\eta-\varphi$ due to the insensitive areas between the tiles.
+			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\varphi<0$) one can see hits from muons.
 			Since this seems to be an error in the geometry record of the HO applied at the beginning of the events, muons in this region are not considered for the following analyses.
-			Finally the safety margins in this study are chosen to be $\Delta\eta = 0.04$\,rad and $\Delta\phi = 0.017$\,rad.
+			Finally the safety margins in this study are chosen to be $\Delta\eta = 0.04$\,rad and $\Delta\varphi = 0.017$\,rad.
 			With all these considerations 1\,016\,286 events with exactly one muon could be selected for the study.
 			In table \ref{CutFlow} the cutflow can be seen.
 			Thereby in each case the remaining number of events after cut is shown.

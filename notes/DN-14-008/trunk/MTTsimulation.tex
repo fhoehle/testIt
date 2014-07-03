@@ -7,7 +7,7 @@
 			It is constructed hierarchically and realized by the XML based detector description language \cite{CMSDDL}.
 			To make the geometry available on runtime the ESProducer \textbf{XMLIdealGeometryESSource} is used converting the XML description of the geommetry in a C++ model.
 			The tree structure of the geometry is then available in the event as an instance of the \textbf{DDCompactView}.
-			In general there are two main classes of geometries existent in CMS.
+			In general there are two main classes of geometries in CMS.
 			For the tracking systems like the muon subdetectors and tracker etc. tracking geometries are available.
 			For the calorimeter systems one can use the calorimetry geometry classes.
 			Details on this procedure can be found in \cite{CMSDDL}.
@@ -17,13 +17,13 @@
 			\subsubsection*{General:}
 			All parts of the MTT geometry are arranged in a hierarchy which is very similar to the muon system hierarchy, especially of the DT system.
 			Concerning this the MTT geometry is to be assigned to the class of tracking geometries.
-			Furthermore the local coordinate system of the MTT is chosen in a way, that the z axis concurs with the global z axis of the CMS.
-			The local y axis therefore is pointing outwards radially.
+			Furthermore the local coordinate system of MTT is chosen in a way, that the z axis concurs with the global z axis of CMS.
+			The local y axis is therefore pointing outwards radially.
 			\subsubsection*{Inner Hierarchy:}
 			The basic unit of the MTT geometry is the \textbf{MTTTile}.
 			This unit is consisting of a scintillator of 10\,mm thickness wrapped by a polyethylene layer of 1\,mm thickness.
 			In figure \ref{fig:tile_wowrapping} several scintillators are seen in light green.
-			The sensitive material of the scintillator is a generic hydrogencarbon compound with the mass composition of $m_H:m_C \approx 91,5\%:8,5\%$.
+			The sensitive material of the scintillator is a generic hydrogencarbon compound with the mass composition of $m_H:m_C \approx 91.5\,\%:8.5\,\%$.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.6\textwidth]{Figures/erdogan/tile_wowrapping.png}
@@ -40,7 +40,7 @@
 			\end{figure}
 			The dimensions of the tiles are dynamic and determined automatically to be fit in a MTTStrip in a way that a strip contains the number of tiles given by the user having the insensitive areas
 			between the tiles to be minimal.
-			The dimension of a strip is in z direction fixed at 2536\,mm since this is the width of the wheels.
+			The dimension of a strip is fixed in z direction at 2536\,mm since this is the width of the wheels.
 			This constraint is the reason of the insensitive areas between the tiles.
 			However in a more sophisticated geometry description these areas can be minimalized since the implemented geometry is a first try to check the feasibility. 
 			The strip itself is made of polystrene.
@@ -51,13 +51,13 @@
 				\caption{MTT geometry: array of several strips, called layer.}
 				\label{fig:layer}
 			\end{figure}
-			Several layers in y direction, than, can be arranged in a panel which is the top unit in the hierarchy.
-			There are already different scenarios written for MTT geometry having one layer in a panel or more layers (figure \ref{fig:panel}).
+			Several layers in y direction can be arranged in a panel which is the top unit in the hierarchy.
+			There are already different scenarios written for MTT geometry having one or more layers in a panel (figure \ref{fig:panel}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/panel1.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/panel2.png}
-				\caption{left one MTT panel with one layer, right a possible scenario for one panel with two layers}
+				\caption{left one MTT panel with one layer, right a possible scenario for one panel with two layers.}
 				\label{fig:panel}
 			\end{figure}
 			\subsubsection*{Numbering:}
@@ -69,12 +69,13 @@
 				\caption{Unique numbering scheme of CMS detectors units.}
 				\label{fig:numbering}
 			\end{figure}
-			The first 4 bits are reserved for the subdetector to which the considered detector unit belongs to.
-			Following 3 bits are marking the subsystem within the subdetector, like DT,CSC,RPC or in our case MTT within the muon system.
-			The remaining bits are to desribe the location of the detector unit in a certain wheel, station etc.
-			For MTT we used the 3 bits after the bits for the subsystem, for the station, 4 bits for the sector, 3 bits for the wheel, 3 bits for the layer, 5 bits for the strip and 5 bits for the tile.
-			With this a MTT system consisting of 7 layers each with 31 strips per $\phi$-sector can be numbered consecutively in a unique way.
-			This would allow tiles with only a few $cm^2$ surface area and since the planned MTT tiles are around $10x10\,cm^2$ this numbering is more than sufficient.
+			The first four bits are reserved for the subdetector to which the considered detector unit belongs to.
+			The following three bits are marking the subsystem within the subdetector, like DT, CSC, RPC or in our case MTT within the muon system.
+			The remaining bits are used to desribe the location of the detector unit in a certain wheel, station etc.
+			For MTT we used the three bits after the bits for the subsystem, for the station, four bits for the sector, three bits for the wheel, three bits for the layer, five bits for the strip and five bits
+			for the tile.
+			With this a MTT system consisting of seven layers each with 31 strips per $\varphi$-sector can be numbered consecutively in a unique way.
+			This would allow tiles with only a few cm^2 surface area and since the planned MTT tiles are around $10\times10$\,cm^2 this numbering is more than sufficient.
 		\subsubsection{Setup and verification for the SimHit generation}
 			After having the geometry of MTT within the CMSSW the next step is to create tools to simulate hits when particles go through a MTT tile.
 			This task is handled by the \textbf{MTTSensitiveDetector} tool which is based on the Geant4 counterpart SensitiveDetector.
@@ -92,13 +93,13 @@
 				\caption{Position of the hits simulated in the MTT in the x-y plane (from \cite{paul_thesis})}
 				\label{fig:hitpos_mtt}
 			\end{figure}
-			The width of the 12 MTT panels in 12 $\phi$ sectors can be seen at a distance of $\approx4\,m$ in x and y direction.
+			The width of the 12 MTT panels in 12 $\varphi$ sectors can be seen at a distance of approximately four meters in x and y direction.
 		\subsubsection{DIGI generation}
 			The simulation of the hits with Geant4 based tools does not consider the detector response on the electronics site.
 			This information has to be added to the simulation.
 			This is called the DIGI step.
 			Since the MTT tiles are under development and the front end electronics are not finalized yet, only a dummy digitizer could be written for MTT.
-			In this dummy each SimHit becames a DIGI without any constraint on its parameters like energy or inefficiencies on the electronics site e.g. photon detection efficiency of the SiPMs etc.
+			In this dummy for each SimHit a DIGI is applied without any constraint on its parameters like energy or inefficiencies on the electronics site e.g. photon detection efficiency of the SiPMs etc.
 			Nevertheless this digitizer is very important for the future analyzes since the MixingModule of CMSSW requires a digitizer to mix pile up information to the signal.
 			Only with this it is possible to analyze the HL-LHC conditions with high pile up and with the extended CMS geometry by MTT.
 %\subsection{First SimHit studies and their results}
