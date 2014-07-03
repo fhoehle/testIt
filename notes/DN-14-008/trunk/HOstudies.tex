@@ -27,31 +27,31 @@
 			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
 			Furthermore the muons also have to have a tight ID.
 			In \cite{CMS-PAPER-MUO-10-004} all requirements on muons to be a tight muon are given.
-			Additionally all these selected tight muons should have a particle flow based combined relative isolation $I$ defined as
+			Additionally all these selected tight muons should have a particle flow based combined relative isolation $I<0.2$ defined as
 			\begin{equation}
 				I = \frac{\sum{E_T^{chHad}} + \sum{E_T^{neutHad}} + \sum{E_T^\gamma}}{p_T}
 			\end{equation}
 			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $\Delta R = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
 			Since the HO system does not cover the whole $\eta$-$\phi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with electronic inefficiencies the
-			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance have to be required.
-			This is done by using the \textit{MuonHOAcceptance} class implemented in CMSSW.
-			\textit{MuonHOAcceptance} contains the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the
+			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance has to be required.
+			This is done by using the \textbf{MuonHOAcceptance} class implemented in CMSSW.
+			\textbf{MuonHOAcceptance} contains the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the
 			acceptance region of tiles which are working properly.
 			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (figure \ref{fig:ho_acceptance}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/deadregions.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/sipmregions.png}
-				\caption{Left: In the $\eta-\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues \cite{JINST}. Right: In red
+				\caption{Left: In the $\eta$-$\phi$ plane, the red rectangles are showing the regions where HO is insensitive due to the supporting material or electrical issues \cite{JINST}. Right: In red
 				rectangles the acceptance regions for tiles with SiPM readout (status pre LS1).}
 				\label{fig:ho_acceptance}
 			\end{figure}
-			In figure \ref{fig:simhits_in_acceptance} the $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
+			In figure \ref{fig:simhits_in_acceptance} the $\eta$-$\phi$ distribution of simulated hits of muons with $p_t = 100$\,GeV (muon gun) in HO is shown.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_wo_deta_dphi.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
-				\caption{Left: $\eta-\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
+				\caption{Left: $\eta$-$\phi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
 				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by the Bethe-Bloch formula,
 				which predicts an energy deposition of larger than 1.4\,MeV for muons going through 1\,cm scintillator material. Right: The same distribution with the safety distances $d\eta = 0.04$\,rad and
 				$d\phi = 0.017$\,rad from the edges of the HO panels.}
@@ -60,30 +60,30 @@
 			According to this figure a large fraction of the accepted muons deposit energies predicted by the Bethe-Bloch formula.
 			However there are muons going through HO tiles but depositing very low energies or no energy at all.
 			These muons are located particularly at the edges of the HO panels.
-			Having only scratched the HO tiles, the transition is obviously enough for very low depositions.
+			Having only scratched the HO tiles the transition is obviously enough for very low depositions.
 			Therefore it is helpful to reject those muons by defining safety margins $\Delta\eta$ and $\Delta\phi$ at the edges of the panels as it is shown on the right hand side in figure
 			\ref{fig:simhits_in_acceptance}.
-			By having these safety margins there is only a very small fraction of muons depositing low energies.
+			By having these safety margins there is only a small fraction of muons depositing low energies.
 			These muons are uniformly distributed in $\eta-\phi$ due to the insensitive areas between the tiles.
 			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\phi<0$) one can see hits from muons.
 			Since this seems to be an error in the geometry record of the HO applied at the beginning of the events, muons in this region are not considered for the following analyses.
 			Finally the safety margins in this study are chosen to be $\Delta\eta = 0.04$\,rad and $\Delta\phi = 0.017$\,rad.
-			With all these considerations 1.016.286 events with exactly one muon could be selected for the study.
-			In \ref{CutFlow} the cutflow can be seen.
+			With all these considerations 1\,016\,286 events with exactly one muon could be selected for the study.
+			In table \ref{CutFlow} the cutflow can be seen.
 			Thereby in each case the remaining number of events after cut is shown.
 			\begin{center}
 			\label{CutFlow}
 				\begin{tabular}{|c|c|}
 					\hline
 					\textbf{cut}  & \textbf{events} \\ \hline \hline
-			 		no/initial    & 13.766.979 		\\ \hline
-			 		back. removal & 13.766.882 		\\ \hline
-			 		prim. vertex  &  8.188.753 		\\ \hline
-			 		$\eta$-$p_t$  &  8.188.753 		\\ \hline
-			 		one muon      &  4.174.334 		\\ \hline
-			 		tight id      &  3.820.149 		\\ \hline
-			 		isolation     &  1.574.816 		\\ \hline
-			 		geom. accept. &  1.016.286 		\\ \hline
+			 		no/initial    & 13\,766\,979 		\\ \hline
+			 		back. removal & 13\,766\,882 		\\ \hline
+			 		prim. vertex  &  8\,188\,753 		\\ \hline
+			 		$\eta$-$p_t$  &  8\,188\,753 		\\ \hline
+			 		one muon      &  4\,174\,334 		\\ \hline
+			 		tight id      &  3\,820\,149 		\\ \hline
+			 		isolation     &  1\,574\,816 		\\ \hline
+			 		geom. accept. &  1\,016\,286 		\\ \hline
 				\end{tabular}
 			\end{center}
 			 %Obviously there are only a few events from beam background.
@@ -95,20 +95,20 @@
 			Being selected as described in \ref{thesectionhere} the muons now schould be matched to the correct HO tiles.
 			This is done by using the standard tracking tool \textit{TrackDetMatchInfo}.
 			Doing a helix approximation this tool collects the information along a track.
-			Among this information also HO related parts like the detector IDs of the tiles crossed by the muon, the reconstructed hits in these tiles or the global position of the track at HO etc. can be
-			found.
+			Among this information HO related parts like the detector IDs of the tiles crossed by the muon, the reconstructed hits in these tiles or the global position of the track at HO etc. can be
+			found as well.
 			If one of the HOIDs crossed by a muon is the same as one of the IDs of a reconstructed hit in the HO system, than this muon is considered as matched.
-			Since no additional requirements on the reconstructed hits - e.g. a certain energy predicted by the Bethe Bloch formula - are done, this procedure is very loose.
+			Since no additional requirements on the reconstructed hits e.g. having a certain energy predicted by the Bethe Bloch formula are done, this procedure is very loose.
 			Nevertheless it illustrates a best case scenario for the detection efficiency of muons in HO in 2012 data taking.
 		\subsubsection{Detection efficiency for prompt muons}
-			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{HOIntro}), the muons flying in the tiles with SiPM readout were seperated from the muons with with HPD readout to see
-			the impact of the upgrade to the SiPM readout.
-			Even with the loose procedure only 306.400 muons out of 947.948 could be matched to the HO tiles with HPD readout.
-			This leads to an efficiency of $\approx32\,\%$.
+			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{HOIntro}), the muons flying in the tiles with SiPM readout were seperated from the muons with HPD readout to see
+			the impact of the upgrade to SiPM readout.
+			Even with the loose procedure only 306\,400 muons out of 947\,948 could be matched to the HO tiles with HPD readout.
+			This leads to an efficiency of approximately 32\,\%.
 			The reason for this very low efficiency is given especially by the noise behaviour of the HPDs as decribed in the sections \ref{HOIntro} and (REF andreas).
-			Looking into the SiPM tiles only, one expect a higher efficiency due to the better S/N ratio of the SiPMs compared to the HPDs.
-			In this case out of selected 68.338 muons 58.920 muons could be matched.
-			This is an efficiency of $86\,\%$.
+			Looking into the SiPM tiles only, one expect a higher efficiency due to the better S/N ratio of SiPMs compared to the HPDs.
+			In this case out of selected 68\,338 muons 58\,920 muons could be matched.
+			This is an efficiency of about 86\,\$.
 			Although this efficiency seems to be relatively high, the expected value for a real case with realistic matching criteria should be lower.
 			This assumption is also reasonable since there is a known problem with the slow control of the first generation SiPMs used for the readout HO tiles during the 2012 data taking.
 			Nevertheless the improvement compared to the HPDs is clearly seen.
@@ -129,10 +129,10 @@
 			Since the cosmic trigger was given by the moun system in the wheels YB+1, YB+2 and YB0 only the data from the corresponding parts of HO can be analyzed.
 			Additionally only a few runs are marked as good for HCal/HO.
 			These are 216232, 216311, 216312, 216420, 216423 and 216450.
-			Having considered that, the RAW data of muons has to be reconstructed according to the standard cosmic reconstruction procedure of CMS.
+			Having considered that, the recorded data of muons in the CMS RAW format has to be reconstructed according to the standard cosmic reconstruction procedure of CMS.
 			In this note we do not describe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
 		\subsubsection{HO DIGI information}
-			The CMS data format DIGI contains the information of the detector response to a physical process like a muon transition.
+			The CMS data format DIGI contains information about the detector response to a physical process like a muon transition.
 			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (adc) for 10 timeslices in a HO DIGI (see also in section \ref{HOIntro}).
 			Each timeslice takes 25\,ns.
 			For the calibration of the HO DIGIs it is possible to use several records registered during the data taking, like the HCalPedestalRecord or HCalElectronicsRecord.
@@ -159,12 +159,12 @@
 				\caption{The signal distribution as a function of adc counts for the tile XY.}
 				\label{fig:noise_low}
 			\end{figure}
-			The first peak is the pedestal of the signal being at 36 adc counts.
-			Furthermore there are 3 additional peaks corresponding to the up to 3 firing pixels of the SiPM.
-			The distance between the peaks, which is the gain of the SiPM, is at 6 adc counts.
+			The first peak at 36 adc counts is the pedestal of the signal.
+			Furthermore there are 3 additional peaks corresponding to up to 3 firing pixels of the SiPM.
+			The distance between the peaks, which is the gain of the SiPM, is 6 adc counts.
 			All these observations are consistent with the expectations from the HO detector performance group (REF to ANDREAS).
 			Since this study is done with only one tile per event the statistic is relatively low.
-			To get more statistic and study the behaviour of the noise distribution with this higher statistic, all tiles per event without a muon transition should be taken into account.
+			To study the behaviour of the noise distribution with higher statistic, all tiles per event without a muon transition should be taken into account.
 			To do this first of all the tile where the muon went through has to be traced.
 			This is done by the TrackDetMatchInfo tool described in the previous subsection.
 			Afterwards a safety region of 3x3 tiles around this traced tile is defined.
@@ -177,11 +177,14 @@
 			\end{figure}
 			The mean is at 36 adc counts as expected and seen as pedestal in the distribution with low statistics.
 			However the fingers are not visible anymore.
-			The reason for this is the smearing of the finger due to their statistical uncertainty.
+			The reason for this is the smearing of the fingers due to statistical fluctuations.
 			Furthermore the distribution drops steaply until in the higher bins there is no significant contribution anymore.
-			It is therefore above 80 adc counts not expected to have a noise contribution in the signal.
-			With this a purity of the muon signal can be defined.
-			In the section \ref{working_point} the value of 80 adc counts can be improved comparing the efficiency and the purity.
+			Using this behaviour a purity $p$ of the muon signal can be defined:
+			\begin{equation}
+				p = \frac{\textnormal{number of entries below threshold}}{\textnormal{number of all entries}},
+			\end{equation}
+			thus above 80 adc counts for instance it is not expected to have any noise contribution in the signal.
+			In the section \ref{working_point} this value can be improved comparing the efficiency and the purity.
 		\subsubsection{Efficiency studies}
 			After having a method to estimate the purity the muon signal itself has to be analyzed.
 			Using the TrackDetMatchInfo tool one can find the tiles where the muons are going through.
@@ -190,38 +193,38 @@
 			The choice of the correct four timeslices is important and is done as described following:
 			\begin{itemize}
 			  \item Find the timeslice $i$ with the highest adc counts.
-			  \item If $i$ between 1. and 7. timeslice (inclusively) add adc counts of the timeslice $i-1$, $i+1$ and $i+2$ to the adc counts of $i$.
-			  \item If $i=0$, $i=8$ or $i=9$ take timeslices 2,3,4 and 5 for the integration.
+			  \item If $i$ between first and seventh (inclusively) add adc counts of the timeslice $i-1$, $i+1$ and $i+2$ to the adc counts of $i$.
+			  \item If $i=0$, $i=8$ or $i=9$ take timeslices second, third, forth and fifth for the integration.
 			\end{itemize}
-			In figure (\ref{fig:efficiency1x1}) the integrated value of adc counts from tiles where a muon went through is plotted.
+			In figure \ref{fig:efficiency1x1} the integrated value of adc counts from tiles where a muon went through is plotted.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/efficiency1x1.png}
 				\caption{}
 				\label{fig:efficiency1x1}
 			\end{figure}
-			Thereby the main issue is the existence of tiles with very low signals (first accumulation).
-			Setting a threshold on the x axis, one can define an efficiency $e$
+			The main issue is the existence of tiles with very low signals (first accumulation).
+			Setting a threshold on the x axis, one can define an efficiency $\epsilon$
 			\begin{equation}
-				e = \frac{\textnormal{number of entries above threshold}}{\textnormal{number of all entries}},
+				\epsilon = \frac{\textnormal{number of entries above threshold}}{\textnormal{number of all entries}},
 			\end{equation}
-			and the inefficiency $1-e$ respectively.
-			If we set the threshold to 60 adc counts, only 80 \% of muons have a signal above threshold.
-			The reason for this behaviour could be the first hint of detector inefficiencies.
+			and the inefficiency $1-\epsilon$ respectively.
+			If the threshold is set to 60 adc counts, only 80\,\% of muons have a signal above threshold.
+			The reason for this behaviour could be a first hint of detector inefficiencies.
 			But also the functionality of the TrackDetMatchInfo tool can be doubted.
 			To study the latter the search for the correct tile is not restricted to one tile predicted by TrackDetMatchInfo but all neighbor tiles of it.
 			In this neighborhood the integration of timeslices is done as described above.
 			The tile is chosen to be the correct tile if the value of the integrated adc counts is maximum.
-			In case of the matching tool being working correctly, the search in the neighbor tiles shouldn't have an effect on the signal distribution from figure \ref{fig:efficiency1x1}.
+			In case of the matching tool being working correctly, the search in the neighbor tiles should have no effect on the signal distribution from figure \ref{fig:efficiency1x1}.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/neighborhood.png}
 				\caption{}
 				\label{fig:neighborhood}
 			\end{figure}
-			But in figure \ref{fig:neighborhood} one can see the improvement of the efficiency to 92\% choosing a search area of 3x3 around the predicted tile.
+			But in figure \ref{fig:neighborhood} one can see the improvement of the efficiency to 92\,\% choosing a search area of 3x3 around the predicted tile.
 			Furthermore increasing the size of this area to 7x7 has no significant effect on the distribution or efficiency.
-			This means that the TrackDetMatchInfo is finding in 80\% of all cases the correct tile and in 12\% of all cases it misses the correct tile by one neighbor tile.
+			This means that the TrackDetMatchInfo is finding in 80\,\% of all cases the correct tile and in 12\,\% of all cases it misses the correct tile by one neighbor tile.
 			The second issue is the shape of the signal.
 			A gaus convoluted Landau fit on the signal (above threshold) is shown in figure \ref{fig:langaus_bad}.
 			\begin{figure}[htbp]
@@ -232,7 +235,7 @@
 			\end{figure}
 			Obviously the shape can not be described with this fit.
 			The reason is the difference in distances of tiles from the readout modules.
-			The intensity of the signals namely drops with the length of the fibre leading it to the readout modules.
+			The intensity of the signals drops with the length of the fibre leading it to the readout modules.
 			Therefore one has to compare only tiles with same fiber lengths.
 			This is done in figure \ref{fig:langaus_good} resulting in a much better fit.
 			\begin{figure}[htbp]
@@ -246,7 +249,7 @@
 			The requirement to a good particle detector is especially working with high efficiency at high purity.
 			In the previous sections we chose the thresholds for purity and efficiency arbitrarily by eye.
 			After plotting those observables as a function of the threshold in adc counts in the same histogram, we can define a more suitable threshold.
-			In figure \ref{fig:pur_eff} this histogram is depicted.
+			In figure \ref{fig:pur_eff} this graph is depicted.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/pur_eff.png}
@@ -254,5 +257,5 @@
 				\label{fig:pur_eff}
 			\end{figure}
 			The intersection point of both curves is at 39 adc counts.
-			At this point the purity accounts to 95\% and the efficiency to 95\%.
-			In a more concervative way one can increase the threshold to 46 adc counts leading to a highly pure signal of above 98\% by decreasing the efficiency to 90\%.
+			At this point the purity accounts to 95\,\% and the efficiency to 95\,\%.
+			In a more concervative way one can increase the threshold to 46 adc counts leading to a highly pure signal of above 98\,\% by decreasing the efficiency to 90\,\%.
