@@ -22,8 +22,7 @@
   YEAR		= "2012",
   PUBLISHER	= "JPCS",
   URL		= "http://iopscience.iop.org/1742-6596/404/1/012018/pdf/1742-6596_404_1_012018.pdf",
-}
-@INPROCEEDINGS{kuenskenCalor,
+}@INPROCEEDINGS{kuenskenCalor,
   AUTHOR	= "{K\"unsken A for the CMS Collaboration}",
   TITLE		= "{MPPC} photon sensor operational experience in {CMS}",
   BOOKTITLE	= "XVIth International Conference on Calorimetry in High Energy Physics (CALOR2014)",
