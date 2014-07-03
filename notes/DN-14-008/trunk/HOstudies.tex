@@ -103,14 +103,14 @@
 		\subsubsection{Detection efficiency for prompt muons}
 			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{HOIntro}), the muons flying in the tiles with SiPM readout were seperated from the muons with with HPD readout to see
 			the impact of the upgrade to the SiPM readout.
-			Even with the loose procedure of matching muons to the correct tiles only 393.900 muons out of 1.222.503 could be matched to the HO tiles with HPD readout.
+			Even with the loose procedure only 306.400 muons out of 947.948 could be matched to the HO tiles with HPD readout.
 			This leads to an efficiency of $\approx32\,\%$.
-			The reason of this very low efficiency is given especially by the noise behaviour of the HPDs as decribed in \ref{HOIntro}.
+			The reason for this very low efficiency is given especially by the noise behaviour of the HPDs as decribed in the sections \ref{HOIntro} and (REF andreas).
 			Looking into the SiPM tiles only, one expect a higher efficiency due to the better S/N ratio of the SiPMs compared to the HPDs.
-			In this case out of selected 84.382 muons 72.720 muons can be matched.
+			In this case out of selected 68.338 muons 58.920 muons could be matched.
 			This is an efficiency of $86\,\%$.
 			Although this efficiency seems to be relatively high, the expected value for a real case with realistic matching criteria should be lower.
-			This is also reasonable since there is a known problem with the slow control of the first generation SiPMs used for the readout HO tiles during 2012 data taking.
+			This assumption is also reasonable since there is a known problem with the slow control of the first generation SiPMs used for the readout HO tiles during the 2012 data taking.
 			Nevertheless the improvement compared to the HPDs is clearly seen.
 	\subsection{Studies on detection efficiency of cosmic muons using the GRIN data} 
 		In November 2013 for one week CMS has taken data of cosmic muons during a global run (GRIN = \textbf{G}lobal \textbf{R}un \textbf{I}n \textbf{N}ovember).
@@ -133,7 +133,7 @@
 			In this note we do not describe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
 		\subsubsection{HO DIGI information}
 			The CMS data format DIGI contains the information of the detector response to a physical process like a muon transition.
-			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (adc) for 10 timeslices in a HO DIGI.
+			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (adc) for 10 timeslices in a HO DIGI (see also in section \ref{HOIntro}).
 			Each timeslice takes 25\,ns.
 			For the calibration of the HO DIGIs it is possible to use several records registered during the data taking, like the HCalPedestalRecord or HCalElectronicsRecord.
 			An alternative calibration can be done using text files filled with calibration values determined by hand.
