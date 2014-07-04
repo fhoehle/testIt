@@ -1,17 +1,19 @@
 \section{MTT Simulation Studies}
+\label{sec:MTTsimulation}
 	For future physics studies with MTT impact, this system has to be implemented in the standard CMS geometry description within CMSSW.
 	In this section this implementation is described. 
 	\subsection{MTT Geometry in CMSSW}
 		\subsubsection{The geometry model of CMS}
 			The geometry model of CMS is based on Geant4 \cite{Geant4}.
 			It is constructed hierarchically and realized by the XML based detector description language \cite{CMSDDL}.
-			To make the geometry available on runtime the ESProducer \textbf{XMLIdealGeometryESSource} is used converting the XML description of the geommetry in a C++ model.
-			The tree structure of the geometry is then available in the event as an instance of the \textbf{DDCompactView}.
+			To make the geometry available on runtime the ESProducer \verb+XMLIdealGeometryESSource+ is used converting the XML description of the geommetry in a C++ model.
+			The tree structure of the geometry is then available in the event as an instance of the \verb+DDCompactView+.
 			In general there are two main classes of geometries in CMS.
 			For the tracking systems like the muon subdetectors and tracker etc. tracking geometries are available.
 			For the calorimeter systems one can use the calorimetry geometry classes.
 			Details on this procedure can be found in \cite{CMSDDL}.
-			For alternative geometry models like the extended CMS geometry containing the MTT system it is nessessary to modify \textbf{XMLIdealGeometryESSource} to load corresponding XML files.
+			For alternative geometry models like the extended CMS geometry containing the MTT system it is nessessary to modify \verb+XMLIdealGeometryESSource+ to load corresponding XML
+			files.
 			In the next section the XML based geometry description of the MTT system is explained.
 		\subsubsection{Description of the MTT geometry for different scenarios}
 			\subsubsection*{General:}
@@ -20,9 +22,9 @@
 			Furthermore the local coordinate system of MTT is chosen in a way, that the z axis concurs with the global z axis of CMS.
 			The local y axis is therefore pointing outwards radially.
 			\subsubsection*{Inner Hierarchy:}
-			The basic unit of the MTT geometry is the \textbf{MTTTile}.
+			The basic unit of the MTT geometry is the \verb+MTTTile+.
 			This unit is consisting of a scintillator of 10\,mm thickness wrapped by a polyethylene layer of 1\,mm thickness.
-			In figure \ref{fig:tile_wowrapping} several scintillators are seen in light green.
+			In Figure \ref{fig:tile_wowrapping} several scintillators are seen in light green.
 			The sensitive material of the scintillator is a generic hydrogencarbon compound with the mass composition of $m_H:m_C \approx 91.5\,\%:8.5\,\%$.
 			\begin{figure}[htbp]
 				\centering
@@ -30,21 +32,21 @@
 				\caption{MTT geometry: tiles without wrappings.}
 				\label{fig:tile_wowrapping}
 			\end{figure}
-			The gaps in between are on the one side due to the absence of the wrapping and on the other side due to the placing in the superior detector unit called \textbf{MTTStrip}.
-			Several MTTTiles namely can be arranged along the z axis in these strips (figure \ref{fig:strip}).
+			The gaps in between are on the one side due to the absence of the wrapping and on the other side due to the placing in the superior detector unit called \verb+MTTStrip+.
+			Several \verb+MTTTiles+ namely can be arranged along the z axis in these strips (Fig. \ref{fig:strip}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.70\textwidth]{Figures/erdogan/strip.png}
 				\caption{MTT geometry: array of several tiles, called strip.}
 				\label{fig:strip}
 			\end{figure}
-			The dimensions of the tiles are dynamic and determined automatically to be fit in a MTTStrip in a way that a strip contains the number of tiles given by the user having the insensitive areas
+			The dimensions of the tiles are dynamic and determined automatically to be fit in a \verb+MTTStrip+ in a way that a strip contains the number of tiles given by the user having the insensitive areas
 			between the tiles to be minimal.
 			The dimension of a strip is fixed in z direction at 2536\,mm since this is the width of the wheels.
 			This constraint is the reason of the insensitive areas between the tiles.
 			However in a more sophisticated geometry description these areas can be minimalized since the implemented geometry is a first try to check the feasibility. 
 			The strip itself is made of polystrene.
-			An array of strips in local x direction is called a layer (figure \ref{fig:layer}).
+			An array of strips in local x direction is called a layer (Fig. \ref{fig:layer}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.70\textwidth]{Figures/erdogan/layer.png}
@@ -52,17 +54,17 @@
 				\label{fig:layer}
 			\end{figure}
 			Several layers in y direction can be arranged in a panel, which is the top unit in the hierarchy.
-			There are already different scenarios written for MTT geometry having one or more layers in a panel (figure \ref{fig:panel}).
+			There are already different scenarios written for MTT geometry having one or more layers in a panel (Fig. \ref{fig:panel}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/panel1.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/panel2.png}
-				\caption{left one MTT panel with one layer, right a possible scenario for one panel with two layers.}
+				\caption{left: one \verb+MTTPanel+ with one layer, right a possible scenario for one panel with two layers.}
 				\label{fig:panel}
 			\end{figure}
 			\subsubsection*{Numbering:}
 			In the detector description of CMS, each detector unit is unique by a 32 bit integer named the DetId.
-			The composition of this integer is depicted in figure \ref{fig:numbering}.
+			The composition of this integer is depicted in Fig. \ref{fig:numbering}.
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.70\textwidth]{Figures/erdogan/numbering.png}
@@ -78,14 +80,14 @@
 			This would allow tiles with only a few cm$^2$ surface area and since the planned MTT tiles are around 10$\times$10\,cm$^2$ this numbering is more than sufficient.
 		\subsubsection{Setup and verification for the SimHit generation}
 			After having the geometry of MTT within the CMSSW the next step is to create tools to simulate hits when particles go through a MTT tile.
-			This task is handled by the \textbf{MTTSensitiveDetector} tool, which is based on the Geant4 counterpart SensitiveDetector.
-			\textbf{MTTSensitiveDetector} collects the information like energy loss, time of flight or position step by step and stores it in a hit.
-			Afterwards this tool has to be introduced to the general hit producer within CMSSW named the \textbf{OscarProducer}.
-			The \textbf{OscarProducer} is responsible for producing hits in several subdetectors at the beginning of an event.
+			This task is handled by the \verb+MTTSensitiveDetector+ tool, which is based on the Geant4 counterpart SensitiveDetector.
+			\verb+MTTSensitiveDetector+ collects the information like energy loss, time of flight or position step by step and stores it in a hit.
+			Afterwards this tool has to be introduced to the general hit producer within CMSSW named the \verb+OscarProducer+.
+			The \verb+OscarProducer+ is responsible for producing hits in several subdetectors at the beginning of an event.
 			This is called the SIM step.
 			(Furthermore the OscarProducer gives the subdetector algorithms constraints like energy thresholds etc.)
 			To verify the correct behaviour of the MTT simhit generator, one can look at the position of the hits in the MTT tiles.
-			For this purpose a muon gun placed in the point of origin of CMS was fired uniformly in all directions and the the x and y coordinates of the simulated hits in MTT were plotted (figure
+			For this purpose a muon gun placed in the point of origin of CMS was fired uniformly in all directions and the the x and y coordinates of the simulated hits in MTT were plotted (Fig.
 			\ref{fig:hitpos_mtt}).
 			\begin{figure}[htbp]
 				\centering
