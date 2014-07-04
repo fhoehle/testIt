@@ -15,7 +15,7 @@
 			In the next section the XML based geometry description of the MTT system is explained.
 		\subsubsection{Description of the MTT geometry for different scenarios}
 			\subsubsection*{General:}
-			All parts of the MTT geometry are arranged in a hierarchy which is very similar to the muon system hierarchy, especially of the DT system.
+			All parts of the MTT geometry are arranged in a hierarchy, which is very similar to the muon system hierarchy, especially of the DT system.
 			Concerning this the MTT geometry is to be assigned to the class of tracking geometries.
 			Furthermore the local coordinate system of MTT is chosen in a way, that the z axis concurs with the global z axis of CMS.
 			The local y axis is therefore pointing outwards radially.
@@ -26,7 +26,7 @@
 			The sensitive material of the scintillator is a generic hydrogencarbon compound with the mass composition of $m_H:m_C \approx 91.5\,\%:8.5\,\%$.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.6\textwidth]{Figures/erdogan/tile_wowrapping.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/tile_wowrapping.png}
 				\caption{MTT geometry: tiles without wrappings.}
 				\label{fig:tile_wowrapping}
 			\end{figure}
@@ -34,7 +34,7 @@
 			Several MTTTiles namely can be arranged along the z axis in these strips (figure \ref{fig:strip}).
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.6\textwidth]{Figures/erdogan/strip.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/strip.png}
 				\caption{MTT geometry: array of several tiles, called strip.}
 				\label{fig:strip}
 			\end{figure}
@@ -47,11 +47,11 @@
 			An array of strips in local x direction is called a layer (figure \ref{fig:layer}).
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.6\textwidth]{Figures/erdogan/layer.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/layer.png}
 				\caption{MTT geometry: array of several strips, called layer.}
 				\label{fig:layer}
 			\end{figure}
-			Several layers in y direction can be arranged in a panel which is the top unit in the hierarchy.
+			Several layers in y direction can be arranged in a panel, which is the top unit in the hierarchy.
 			There are already different scenarios written for MTT geometry having one or more layers in a panel (figure \ref{fig:panel}).
 			\begin{figure}[htbp]
 				\centering
@@ -65,7 +65,7 @@
 			The composition of this integer is depicted in figure \ref{fig:numbering}.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.6\textwidth]{Figures/erdogan/numbering.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/numbering.png}
 				\caption{Unique numbering scheme of CMS detectors units.}
 				\label{fig:numbering}
 			\end{figure}
@@ -78,7 +78,7 @@
 			This would allow tiles with only a few cm$^2$ surface area and since the planned MTT tiles are around 10$\times$10\,cm$^2$ this numbering is more than sufficient.
 		\subsubsection{Setup and verification for the SimHit generation}
 			After having the geometry of MTT within the CMSSW the next step is to create tools to simulate hits when particles go through a MTT tile.
-			This task is handled by the \textbf{MTTSensitiveDetector} tool which is based on the Geant4 counterpart SensitiveDetector.
+			This task is handled by the \textbf{MTTSensitiveDetector} tool, which is based on the Geant4 counterpart SensitiveDetector.
 			\textbf{MTTSensitiveDetector} collects the information like energy loss, time of flight or position step by step and stores it in a hit.
 			Afterwards this tool has to be introduced to the general hit producer within CMSSW named the \textbf{OscarProducer}.
 			The \textbf{OscarProducer} is responsible for producing hits in several subdetectors at the beginning of an event.
@@ -89,7 +89,7 @@
 			\ref{fig:hitpos_mtt}).
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.6\textwidth]{Figures/erdogan/hitpos_mtt.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/hitpos_mtt.png}
 				\caption{Position of the hits simulated in the MTT in the x-y plane (from \cite{paul_thesis})}
 				\label{fig:hitpos_mtt}
 			\end{figure}
