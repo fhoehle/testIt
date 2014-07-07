@@ -1,4 +1,4 @@
-\section{HO SiPM Upgrade\footnote{Corresponding Author: Andreas K\"unsken}}\label{sec:HoSipmUpgrade}
+\section{HO SiPM Upgrade}\footnote{Corresponding Author: Andreas K\"unsken}\label{sec:HoSipmUpgrade}
 \subsection{Hardware Design}\label{kuenskenHardwareDesign}
 In the first long shutdown of the LHC, HO was subject to upgrades. The previously used Hybrid Photo-Diodes (HPD) were replaced by SiPMs due to bad performance. The SiPM readout was designed as a drop-in replacement to keep most of the readout chain. The SiPMs were arranged on a newly produced Printed Circuit Board (PCB) to match the position of the pixels of the HPDs. The arrangement of the SiPMs is shown in Fig. \ref{kuenskensipmPcb}.
 \begin{figure}[h]
@@ -19,7 +19,6 @@ It can be seen that the new PCB has 18 SiPMs in the position where the 18 pixels
 The installed SiPM type was produced by Hamamatsu and is identical to a Hamamatsu S10931-050. It has an area of (3x3)\,mm$^2$ and comes with an SMD type housing. The cell pitch is 50\,$\mu$m.
 Because HO has two layers of scintillator in ring 0 the number of fibers arriving at a single SiPM is larger in ring 0. As a consequence, the fibers cannot be arranged such that they completely fit inside the area of an SiPM. Therefore, a light mixer is installed between the ends of the fibers and the SiPM surface in ring 0. This light mixer
 ensures that the light is distributed uniformly over the SiPM's surface, thus, avoiding the loss of light of only certain fibers.\\
-%distributes the light of the fibers uniformly over an SiPM's surface and compensates for light losses at the edges of an SiPM.
 With SiPMs being solid state devices and thus being rather sensitive to temperature changes, it is inevitable to provide a controlled temperature environment for a stable operation of the devices. A key feature is the change of the SiPM's breakdown voltage with temperature. The manufacturer specifies this quantity to be 56\,$\frac{\text{mV}}{\text{K}}$. For this reason the PCBs carrying the SiPMs are equipped with Peltier elements on their backsides. Fig. \ref{kuenskenpeltier} shows a mounted Peltier element on a PCB.
 \subsection{System Performance}
 \subsubsection{Temperature}
