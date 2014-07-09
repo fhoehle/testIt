@@ -20,9 +20,9 @@ A ghost can also be a detected muon that has the wrong time stamp and thus is as
 \subsubsection{Reco ghosts}
 Following the definition of ghosts, a RECO ghost is a reconstructed muon that has no matching generated (GEN) muon.\\
 For this matching, for every RECO muon the nearest GEN muons in terms of $\Delta R$ is determined. Additionally, the vertex position of the GEN and RECO muon must not be displaced by $>$ 0.1 cm in every of the three coordinates to assure that the RECO muon is not from a pileup event.\\
-The following investigations are performed with global muons only, to have muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample is a ZZ$\to$4l with 2012 conditions.\\
-$\Delta R$ is plotted for all GEN muons with their matched RECO muon. If two RECO muons match the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
-The $\Delta R$ distribution is shown in Fig. \ref{DeltaRDistribution}. Most of the matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a slight maximuim at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.\\
+The following investigations are performed with global muons only, to have both the muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample used is a ZZ$\to$4l with 2012 conditions.\\
+$\Delta R$ is plotted (Fig. \ref{DeltaRDistribution}) for all GEN muons with their matched RECO muon. If two RECO muons match the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
+Most of the matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a maximum at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.
 \begin{figure}[b]
 \centering
 \begin{minipage}[t]{0.95\textwidth}
@@ -35,8 +35,8 @@ If one GEN muon has two or more associated RECO muons all but one of these RECO 
 For the separation whether a RECO muon is a ghost or real, a $\Delta R$ cut is introduced. If the $\Delta R$ between RECO muon and associated GEN muon is smaller than 0.1, the muon is considered to be a correctly reconstructed muon. If the $\Delta R$ is greater than 0.1, it is considered to be a ghost.
 
 \subsubsection{Matching efficiency and quality of separation}
-To determine whether the matching algorithm is correct and efficient, some control variables have been observed.\\
-The distance of vertex position in the z direction (meaning along the beam axis) of the RECO muon and the associated GEN muon was plotted (see figure \ref{DeltaZMatching}). The distance is within the resolution of the tracker system. Nevertheless, all muons with a distance of more than 0.1 cm are rejected, since for large distances in the z vertex a mismatching can not be imposed.\\
+To determine whether the matching algorithm is correct and efficient, some control variables have been studied.\\
+The distance of the vertex position in the z direction (along the beam axis) of the RECO muon and the associated GEN muon was plotted (see Fig. \ref{DeltaZMatching}). The distance is within the resolution of the tracker system. Nevertheless, all muons with a distance of more than 0.1 cm are rejected, since for large distances in the z vertex difference a mismatching can not be imposed.\\
 \begin{figure}[b]
 \centering
 \begin{minipage}[t]{0.95\textwidth}
@@ -45,7 +45,7 @@ The distance of vertex position in the z direction (meaning along the beam axis)
 \label{DeltaZMatching}
 \end{minipage}
 \end{figure}
-To show that the determination between ghost and real muon is reliable, the $p_{T}$ ratio between GEN muon and RECO muon is plotted for identified ghosts (see figure \ref{PtRatioGhost}) and real muons within a ghost event (see figure \ref{PtRatioReal}).
+To show that the determination between ghost and real muon is reliable, the $p_{T}$ ratio between GEN muon and RECO muon is plotted for identified ghosts (see Fig. \ref{PtRatioGhost}) and real muons within a ghost event (see Fig. \ref{PtRatioReal}).
 \begin{figure}[b]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
@@ -61,7 +61,7 @@ To show that the determination between ghost and real muon is reliable, the $p_{
 \end{minipage}
 \end{figure}
 The $p_{T}$ ratio peaks at 1 for real muons. This indicates that the RECO muon is in fact the correct reconstruction of the generated particle. On the other hand, the $p_{T}$ ratio of the ghost muons shows a non peaking shape. Therefore, it can be assumed that the $p_{T}$ of the ghosts is not related to the matched GEN particle. The $p_{T}$ of the ghost is smaller than the $p_{T}$ of the generating particle in the majority of ghost events.\\
-Furthermore, under the assumption that there is one ghost per real muon only in the majority of the events one expects that the number of ghosts and real muons is equal for a certain GEN muon. Comparing the number of ghosts (12175) and the number of real muons (12013) shows that the seperation between the real and the ghost muon is working well.
+Furthermore, under the assumption that there is only one ghost per real muon in the majority of the events, one expects that the number of ghosts and real muons is equal for a certain GEN muon. Comparing the number of ghosts (12175) and the number of real muons (12013) shows that the seperation between the real and the ghost muon is working well.
 
 \subsubsection{Ghost busting with HO information}
 To determine whether hadron outer (HO) information can be used to bust ghosts on L1 Level, the whole calorimeter (including HCAL and ECAL) information is used for 2012 simulations, since HO did not work properly during this phase. In a first step, the likelihood ratio of the calorimeter system (ECAL, HCAL, HO) defined as
@@ -97,7 +97,7 @@ The efficiency is defined as
 E=\frac{\sum_{i = 1}^\infty N_{\mathrm{BTI}_i}}{\sum_{i = 0}^\infty N_{\mathrm{BTI}_i}}
 \end{equation}
 with $N_{\mathrm{BIT}_i}$ the number of events with $i$ BTI triggers.\\
-An effiency of about 80\% is reached for one station only (see figure \ref{BTIEfficiency}).
+An effiency of about 80\% is reached for one station only (see Fig. \ref{BTIEfficiency}).
 \begin{figure}
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/SectorGunPt100dPhi0_5Phi0_h1dFilteredBtiHitsPerEvtSL1.png}
@@ -107,7 +107,7 @@ An effiency of about 80\% is reached for one station only (see figure \ref{BTIEf
 \end{figure}
 The number of events with BTI ghosts is defined as
 \begin{equation}
-N_{\mathrm{Ghost\ Event}} = \sum_{i = 2}^\infty N_{\mathrm{BTI}_i}_{\cdot}
+N_{\mathrm{Ghost\ Event}} = \sum_{i = 2}^\infty N_{\mathrm{BTI}_{i\cdot}}
 \end{equation}
 This number can be up to 5 if no filter on the bunchcrossing ID is used. The filter on the bunchcrossing ID can reduce this number of BTI ghosts significantly. Using the filter on the bunchcrossing ID the ghost rate at BTI level is reduced to about 1\%.\\
-Unfortunately, an adjustment oder modification of the BTI system is not possible for the planned upgraded phases since it would need direct access to every muon station. Therefore, the number of BTI trigger can not be reduced by HO like systems.
+Unfortunately, an adjustment oder modification of the BTI system is not possible for the planned upgrade phases since it would need direct access to every muon station. Therefore, the number of BTI trigger can not be reduced by an HO like system.
