@@ -106,7 +106,7 @@
 			Since no additional requirements on the reconstructed hits e.g. having a certain energy predicted by the Bethe Bloch formula are done, this procedure is very loose.
 			Nevertheless it illustrates a best case scenario for the detection efficiency of muons in HO in 2012 data taking.
 		\subsubsection{Detection efficiency for prompt muons}
-			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{sec:HOintro}), the muons transversing the tiles with SiPM readout were seperated from the muons with HPD readout to
+			Since the HO system was read out partially by SiPMs and HPDs (see section \ref{sec:HOintro}), the muons traversing the tiles with SiPM readout were seperated from the muons with HPD readout to
 			see the impact of the upgrade to SiPM readout.
 			Even with the loose procedure 641\,585 muons out of 947\,948 could be matched to the HO tiles with HPD readout.
 			This leads to an efficiency of approximately 68\,\%.
@@ -139,7 +139,7 @@
 			In this note we do not describe in detail the reconstruction of the hits in the HO system, since the study in this section is concentrated on the DIGI information of HO.
 		\subsubsection{HO DIGI information}
 			The CMS data format DIGI contains information about the detector response to a physical process like a muon transition.
-			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (ADC) for 10 timeslices in a HO DIGI (see also in section \ref{HOIntro}).
+			In case of HO the measured signal is stored as counts of an analog-to-digital-converter (ADC) for 10 timeslices in a HO DIGI (see also in section \ref{sec:HOintro}).
 			Each timeslice takes 25\,ns.
 			For the calibration of the HO DIGIs it is possible to use several records registered during the data taking, like the HCalPedestalRecord or HCalElectronicsRecord.
 			An alternative calibration can be done using text files containing standard calibration values.
@@ -148,16 +148,16 @@
 			In Fig. \ref{fig:adc_vs_ts} the calibrated ADC counts versus the timeslices in which they are measured are shown.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.70\textwidth]{Figures/erdogan/adc_vs_ts.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/adc_vs_ts.pdf}
 				\caption{The calibrated ADC counts versus the timeslices in which they are measured: In blue a tile is chosen, where no muon is gone through (noise). In red is a tile with muon transition shown.}
 				\label{fig:adc_vs_ts}
 			\end{figure}
 			In case of a muon transition the measured ADC counts in the corresponding timeslice are clearly higher than without muon transition.
-			This means distinguishing muon signal from noise should be possible.
+			This means seperating muon signal from noise is possible.
 		\subsubsection{Purity studies}
 			In \cite{dn2014-020} the funtionality of SiPMs is discussed.
-			Concerning the HO data from GRIN a so-called finger spectrum can be studied.
-			Therefore the signal in one randomly chosen HO tile is considered.
+			Studies on local HO data with so-called finger spectra are done and outlined in the section \ref{sec:hoSipmUpgrade}.
+			Concerning the HO data from GRIN the signal in one randomly chosen HO tile is considered.
 			In Fig. \ref{fig:noise_low} this signal distribution as a function of ADC counts is shown for the tile XY.
 			\begin{figure}[htbp]
 				\centering
@@ -165,7 +165,7 @@
 				\caption{The signal distribution as a function of ADC counts for a randomly chosen tile.}
 				\label{fig:noise_low}
 			\end{figure}
-			The first peak at 36 ADC counts is the pedestal of the signal.
+			The first peak at 36 ADC counts is the pedestal peak.
 			Furthermore there are 3 additional peaks corresponding to up to 3 firing pixels of the SiPM.
 			The distance between the peaks, which is the gain of the SiPM, is 6 ADC counts.
 			All these observations are consistent with the expectations from the HO detector performance group as outlined in section \ref{sec:hoSipmUpgrade}.
@@ -194,7 +194,7 @@
 		\subsubsection{Efficiency studies}
 			After having a method to estimate the purity the muon signal itself has to be analyzed.
 			Using the TrackDetMatchInfo tool one can find the tiles where the muons are going through.
-			Once the correct tiles are traced, the DIGI information can be looked into.
+			Once the correct tiles are tagged, the DIGI information can be analyzed.
 			For this purpose an integration over four timeslices is done to define the signal.
 			The choice of the correct four timeslices is important and is done as described here:
 			\begin{itemize}
@@ -205,7 +205,7 @@
 			In Fig. \ref{fig:efficiency1x1} the integrated value of ADC counts from tiles where a muon went through is plotted.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.70\textwidth]{Figures/erdogan/efficiency1x1.png}
+				\includegraphics[width=0.70\textwidth]{Figures/erdogan/neighborhood1.png}
 				\caption{The signal in ADC counts from tiles with muon transition}
 				\label{fig:efficiency1x1}
 			\end{figure}
@@ -224,9 +224,9 @@
 			In case of the matching tool being working correctly, the search in the neighbor tiles should have no effect on the signal distribution from Fig. \ref{fig:efficiency1x1}.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.70\textwidth]{Figures/erdogan/neighborhood.png}
-				\caption{Comparison of signals from muon tiles between two approaches. In red the signal distribution in case of looking only in the tile predicted by the matching tool. In blue in case of
-				considering a 3x3 grid around this tile.}
+				\includegraphics[width=0.5\textwidth]{Figures/erdogan/neighborhood2.png}
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/neighborhood.png}
+				\caption{Left: Signal distribution in case of considering a 3x3 grid around the tile predicted by the matching tool. Right: Comparison between the left distribution (in blue) and the distribution from Fig. \ref{fig:efficiency1x1}}
 				\label{fig:neighborhood}
 			\end{figure}
 			But in Fig. \ref{fig:neighborhood} one can see the improvement of the efficiency to 92\,\% choosing a search area of 3x3 around the predicted tile.
@@ -260,8 +260,9 @@
 			In Fig. \ref{fig:pur_eff} this graph is depicted.
 			\begin{figure}[htbp]
 				\centering
-				\includegraphics[width=0.70\textwidth]{Figures/erdogan/pur_eff.png}
-				\caption{Graph of purity and efficiency as a function of ADC counts.}
+				\includegraphics[width=0.45\textwidth]{Figures/erdogan/pur_eff.png}
+				\includegraphics[width=0.50\textwidth]{Figures/erdogan/pur_eff_zoom.png}
+				\caption{Left: Graph of purity and efficiency as a function of ADC counts. Right: Same graph zoomed in the intersection area.}
 				\label{fig:pur_eff}
 			\end{figure}
 			The intersection point of both curves is at 39 ADC counts.
