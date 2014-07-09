@@ -3,30 +3,28 @@
 	In this section studies on detection efficiency of high energetic muons in the hadron outer calorimeter (HO) using 2012 data are shown.
 	In addition the detection efficiency for cosmic muons from GRIN data is studied.
 	\subsection{Studies on detection efficiency of prompt muons using 2012 data}
-		Due to the similarity of the setup of HO and MTT, by studying the HO signals we expect to find answers to some open questions concerning the MTT concept e.g. the muon detection capability of a
-		scintillator system read out by SiPMs e.g.
+		Due to the similarity of the setup of HO and the MTT we expect to find answers to some open questions concerning the MTT concept e.g. the muon detection capability of a
+		scintillator system read out by SiPMs by studying the HO signals.
 		In particular the detection efficiency for tight ID muons from Run A of the 2012 data in HO has been studied.
 		The used dataset (/SingleMu/Run2012A-22Jan2013-v1/RECO) is from the re-reconstruction campain Jan 2013.
 		Thereby the SingleMu stream contains several HLT trigger paths each with at least one triggered muon with different conditions like a $p_T$ requirement or an isolation criterion.
-		In this note we won't go into the details of the composition of the SingleMu stream. 
 		The muons from this dataset have to fulfill some selection criteria and also they have to be accepted by the HO system.
-		The latter is necessary because of to the inefficient areas of HO caused for example by the supporting structures of CMS like the chimney (\cite{JINST}).
-		But before this selection can be done, the events have to fulfill some cleaning procedure.
+		The latter is necessary because of inefficient areas of HO caused for example by the supporting structures of CMS like the chimney \cite{JINST}.
+		Before this selection can be done, the events have to fulfill some cleaning procedure.
 		First of all the events from beam background are removed.
-		Than a primary vertex filter is applied:
+		Than a primary vertex filter is applied \cite{CMS-PAPER-TRK-11-001}:
 		Using the vertex collection \verb+offlinePrimaryVertices+ only the events are chosen, in which vertices could be found whose:
 			\begin{itemize}
 				\item minimum number of degrees of freedom is 4,
-				\item maximum distance on the $z$ axis to the origin of the coordinate system is 24\,cm,
+				\item maximum distance on the $z$ axis to the origin of the coordinate system of CMS is 24\,cm,
 				\item maximum impact parameter $d_0$ is 2\,cm.
 			\end{itemize}
 		\subsubsection{Muon selection and acceptance by HO}
 		\label{thesectionhere}
 			To be sure to have no misidentified muons going through the HO tiles some selection criteria are set for the reconstructed muons.
-			First of all only reconstructed global muons are chosen.
-			Their transverse momentum $p_T$ should be greater than 26\,GeV.
-			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to be ensure that they are in the barrel region and especially in the region of HO.
-			Furthermore the muons also have to have a tight ID.
+			Only reconstructed global muons are chosen and their transverse momentum $p_T$ must be greater than 26\,GeV.
+			Then a cut on the pseudorapidity of the muons $|\eta_\mu| < 0.9$ is applied to ensure that they are in the barrel region and especially in the region of HO.
+			Furthermore the muons have to have a tight ID.
 			In \cite{CMS-PAPER-MUO-10-004} all requirements on muons to be a tight muon are given.
 			Additionally all these selected tight muons should have a particle flow based combined relative isolation $I<0.2$ defined as
 			\begin{equation}
@@ -34,18 +32,17 @@
 			\end{equation}
 			where $E_T^{chHad}$ is the transverse energy of a charged hadron in a cone of $\Delta R = 0.4$ around the muon, $E_T^{neutHad}$ same for a neutral hadron and $E_T^\gamma$ for a photon.
 			Since the HO system does not cover the whole $\eta$-$\varphi$ plane - for example there are no tiles between the wheels - and also since the HO system has some areas with electronic inefficiencies the
-			cut on $|\eta_{mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance has to be required.
+			cut on $|\eta_{\mu}|$ mentioned before is not sufficient and a more sophisticated geometrical acceptance has to be required.
 			This is done by using the \verb+MuonHOAcceptance+ class implemented in CMSSW.
 			\verb+MuonHOAcceptance+ contains the entire HO geometry and allows boolean decisions on whether a muon is in the geometrical acceptance of the HO or not and also whether a muon is in the
-			acceptance region of tiles, which are working properly.
+			acceptance region of tiles, that are working properly.
 			It is also possible to accept or reject muons in regions with SiPM instrumented tiles (Fig. \ref{fig:ho_acceptance}).
 			\begin{figure}[htbp]
 				\centering
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/deadregions.png}
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/sipmregions.png}
 				\caption{Left: In the $\eta$-$\varphi$ plane, the red rectangles are showing the regions, where HO is insensitive because of the supporting material or electrical issues (see also \cite{JINST}).
-				Right:
-				In red rectangles the acceptance regions for tiles with SiPM readout (status pre LS1).}
+				Right: In red rectangles the acceptance regions for tiles with SiPM readout (status pre LS1).}
 				\label{fig:ho_acceptance}
 			\end{figure}
 			In Fig. \ref{fig:simhits_in_acceptance} the $\eta$-$\varphi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun) in HO is shown.
@@ -55,27 +52,28 @@
 				\includegraphics[width=0.45\textwidth]{Figures/erdogan/simhits_with_deta_dphi.png}
 				\caption{Left: $\eta$-$\varphi$ distribution of simulated hits of muons with $p_T = 100$\,GeV (muon gun). In green, hits from geometrically accepted muons with energy depositions above 1.4\,MeV, in
 				blue, same for muons with energy depositions between 0 and 1.4\,GeV and in magenta, for muons with no energy deposition at all. The threshold at 1.4\,MeV is motivated by the Bethe-Bloch formula,
-				which predicts an energy deposition of larger than 1.4\,MeV for muons going through 1\,cm scintillator material. Right: The same distribution with the safety distances $d\eta = 0.04$\,rad and
-				$d\varphi = 0.017$\,rad from the edges of the HO panels.}
+				which predicts an energy deposition of larger than 1.4\,MeV for muons going through 1\,cm scintillator material. Right: The same distribution with the safety distances $d\eta = 0.04$ and
+				$d\varphi = 0.017$ from the edges of the HO panels.}
 				\label{fig:simhits_in_acceptance}
 			\end{figure}
 			According to this figure a large fraction of the accepted muons deposit energies predicted by the Bethe-Bloch formula.
 			However there are muons going through HO tiles but depositing very low energies or no energy at all.
-			These muons are located particularly at the edges of the HO panels.
+			These muons are located particularly at the edges of the panels of HO.
+			The panel structure is described in section \ref{sec:HOintro}.
 			Having only scratched the HO tiles the transition is obviously enough for very low depositions.
 			Therefore it is helpful to reject those muons by defining safety margins $\Delta\eta$ and $\Delta\varphi$ at the edges of the panels as it is shown on the right hand side in Fig.
 			\ref{fig:simhits_in_acceptance}.
 			By having these safety margins there is only a small fraction of muons depositing low energies.
 			These muons are uniformly distributed in $\eta-\varphi$ because of the insensitive areas between the tiles.
+			With these results the safety margins in the study of the 2012 data are chosen to $\Delta\eta = 0.04$\,rad and $\Delta\varphi = 0.017$\,rad.
+			Thereby these values are not meant to be optimal and there are also muons with high energy depositions rejected.  
 			Furthermore in one of the geometrical rejection regions in wheel +1 ($0.3<\eta<0.9$ and $-0.2<\varphi<0$) one can see hits from muons.
 			Since this seems to be an error in the geometry record of the HO applied at the beginning of the events, muons in this region are not considered for the following analyses.
-			Finally the safety margins in this study are chosen to be $\Delta\eta = 0.04$\,rad and $\Delta\varphi = 0.017$\,rad.
 			With all these considerations 1\,016\,286 events with exactly one muon could be selected for the study.
 			In table \ref{CutFlow} the cutflow can be seen.
 			Thereby in each case the remaining number of events after cut is shown.
 			\begin{table*}[htbH]
 				\begin{center}
-				\label{CutFlow}
 					\begin{tabular}{|c|c|}
 						\hline
 						\textbf{cut}  & \textbf{events} \\ \hline \hline
@@ -89,6 +87,8 @@
 			 			geom. accept. &  1\,016\,286 		\\ \hline
 					\end{tabular}
 				\end{center}
+				\caption{Cut flow of the analyzed muons from the 2012 data.}
+				\label{CutFlow}
 			\end{table*}
 			 %Obviously there are only a few events from beam background.
 			 %The first cut with a big impact is the primary vertex filter.
