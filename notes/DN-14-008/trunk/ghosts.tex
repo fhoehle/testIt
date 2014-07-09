@@ -2,24 +2,24 @@
 \subsection{The DT System}
 \label{DTSystem}
 The drifttube (DT) system of the muon detector at CMS consists of several organization structures.\\
-The smallest structure, the drift tubes are organized within a superlayer (SL). A superlayer consists of four layers of DTs. Every sector per wheel in CMS has four muon stations, counted 1 to 4 beginning with the most inner sation.\\
-A muon station is the composition of two SLs that are oriented in phi direction (stations 1-4) and one SL in theta direction (stations 1-3). The hardware of one station is assembled in a minicrate (MC).\\
-The trigger chain of the DT system starts within a SL. Nine of the DTs are combined to a bunch and track identifier (BTI) Trigger. BTI Triggers have an overlap region to avoid inefficiencies and to obtain redundancy. If three of four DT see a signal for a certain bunch crossing, a low quality trigger (LTRG) is generated. If four DTs in line see a signal, a high quality trigger (HTRG) is generated. For now, only HTRG are processed to the next trigger step.\\
-The track correlator (TRACO) combines the HTRG of the two BTI of the SL in phi direction within one station. TRACO triggers can be generated for muons with an angle of $45^{\circ}$ \cite{bunchedBeamTest} and less.\\
+The smallest structure, the drift tubes are organized within a superlayer (SL). A superlayer consists of four layers of DTs. Every sector per wheel in CMS has four muon stations, counted 1 to 4 beginning with the inner most station.\\
+A muon station is the composition of two SLs oriented in $\phi$ direction (stations 1-4) and one SL in $\theta$ direction (stations 1-3). The readout hardware of one station is assembled in a minicrate (MC).\\
+The trigger chain of the DT system starts within a SL. Nine of the DTs are combined to a bunch and track identifier (BTI) Trigger. BTI Triggers have an overlap region to avoid inefficiencies and to obtain redundancy. If three of four DTs see a signal for a certain bunch crossing, a low quality trigger (LTRG) is generated. If four DTs in line see a signal, a high quality trigger (HTRG) is generated. For now, only HTRG are processed in the next trigger step.\\
+The track correlator (TRACO) combines the HTRG of the two BTIs of the SL in phi direction within one station. TRACO triggers can be generated for muons with an angle of $45^{\circ}$ \cite{bunchedBeamTest} or less.\\
 These TRACO triggers are transmitted via 40 line flat cables to the trigger server (TS). The TS is located on the MC of station 4.\\
-The TS has a phi and a theta part. The TS phi correlates the TRACO tracks in phi direction. The TS theta correlates the tracks in the theta view.\\
+The TS consists of a phi and a theta part. The TS phi correlates the TRACO tracks in phi direction. The TS theta correlates the tracks in $\theta$.\\
 This data is transmitted via low voltage differential signaling (LVDS) to the sector collector (SC) that is located in the service cavern (USC).\\
 From there the signal is processed to the global muon trigger (GMT) and the global trigger (GT).
 For the setup of the muon trigger system, see also \cite{cmsMuonProject}.
 \subsection{Reconstruced Ghosts}
 \subsubsection{Ghost definition}
 Ghosts are faked muons that are detected by the muon system although there is no physical muon present.
-Muon ghosts can occur in all stages of the detection and reconstruction system of CMS beginning with the low level triggers up to the final reconstructed data (fig. \ref{fig:ghosts}).
+Muon ghosts can occur in all stages of the detection and reconstruction system of CMS beginning with the low level triggers up to the final reconstructed data (Fig. \ref{fig:ghosts}).
 A ghost can also be a detected muon that has the wrong time stamp and thus is assigned to the wrong bunch crossing.
 
 \subsubsection{Reco ghosts}
 Following the definition of ghosts, a RECO ghost is a reconstructed muon that has no matching generated (GEN) muon.\\
-For this matching, for every RECO muon the nearest GEN muons in terms of $\Delta R$ is determined. Additionally, the vertex position of the GEN and RECO muon is not allowed to be more than 0.1 cm away from each other in every of the three coordinates to assure that the RECO muon is not from a pileup event.\\
+For this matching, for every RECO muon the nearest GEN muons in terms of $\Delta R$ is determined. Additionally, the vertex position of the GEN and RECO muon must not be displaced by $>$ 0.1 cm in every of the three coordinates to assure that the RECO muon is not from a pileup event.\\
 The following investigations are performed with global muons only, to have muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample is a ZZ$\to$4l with 2012 conditions.\\
 $\Delta R$ is plotted for all GEN muons with their matched RECO muon. If two RECO muons match the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
 The $\Delta R$ distribution is shown in Fig. \ref{DeltaRDistribution}. Most of the matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a slight maximuim at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.\\
