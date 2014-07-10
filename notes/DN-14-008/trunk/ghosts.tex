@@ -20,7 +20,7 @@ A ghost can also be a detected muon that has the wrong time stamp and thus is as
 \subsubsection{Reco ghosts}
 Following the definition of ghosts, a RECO ghost is a reconstructed muon that has no matching generated (GEN) muon.\\
 For this matching, for every RECO muon the nearest GEN muons in terms of $\Delta R$ is determined. Additionally, the vertex position of the GEN and RECO muon must not be displaced by $>$ 0.1 cm in every of the three coordinates to assure that the RECO muon is not from a pileup event.\\
-The following investigations are performed with global muons only, to have both the muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample used is a ZZ$\to$4l with 2012 conditions.\\
+The following investigations are performed with global muons only, to have both the muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample used is a ZZ$\to$4l with 2012 conditions\footnote{Sample: /ZZJetsTo4L\textunderscore TuneZ2star\textunderscore 8TeV-madgraph-tauola/Summer12\textunderscore DR53X-PU\textunderscore S10\textunderscore START53\textunderscore V7A-v1/AODSIM, Global tag: START52\textunderscore V4::All, CMSSW version: 5.3.12 patch 2}.\\
 $\Delta R$ is plotted (Fig. \ref{DeltaRDistribution}) for all GEN muons with their matched RECO muon. If two RECO muons match the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
 Most of the matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a maximum at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.
 \begin{figure}[b]
@@ -66,19 +66,18 @@ Furthermore, under the assumption that there is only one ghost per real muon in 
 \subsubsection{Ghost busting with HO information}
 To determine whether hadron outer (HO) information can be used to bust ghosts on L1 Level, the whole calorimeter (including HCAL and ECAL) information is used for 2012 simulations, since HO did not work properly during this phase. In a first step, the likelihood ratio of the calorimeter system (ECAL, HCAL, HO) defined as
 \begin{equation}
-L=\frac{L_{\mathrm{muon}}}{L_{\mathrm{muon}} + L_\mathrm{not\ muon}}
+\mathcal{L}=\frac{\mathcal{L}_{\mathrm{muon}}}{\mathcal{L}_{\mathrm{muon}} + \mathcal{L}_\mathrm{not\ muon}}
 \end{equation}
 is plotted.
 \begin{figure}[b]
 \centering
-\begin{minipage}[t]{0.95\textwidth}
+\begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/LikelihoodNonGhost.png}
 \caption{Likelihood ratio for an MIP like entry in the calorimeter system for real muons}
 \label{LikelihoodReal}
 \end{minipage}
-\end{figure}
-\begin{figure}
-\begin{minipage}[t]{0.95\textwidth}
+\hspace{0.5cm}
+\begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/LikelihoodGhost.png}
 \caption{Likelihood ratio for an MIP like entry in the calorimeter system for ghosts}
 \label{LikelihoodGhost}
@@ -86,7 +85,8 @@ is plotted.
 \end{figure}
 For identified muons the likelihood ratio peaks at 1. This is consistent with the fact that real muons should deposit energy within the calorimeter system.\\
 The likelihood ratio for ghosts peaks at 0, has a miminum at 0.4, and rises again up to 1 without reaching a maximum at 1. The ghosts should not deposit energy in the calorimeter system. For some of the ghosts this seems to be the case. For the other ghosts the likelihood might be tending to 1 because energy is deopsited in the calorimeter system by other particles or due to some noise. This can also explain why the likelihood ratio drops at the 1st bin for ghosts.\\
-In a next step, the energy information in the HO system for an HO tower has to be investigated to obtain whether HO can serve as muon veto and trigger. This has to be redone also for HL-LHC conditions. Here, one has to check whether the granularity of HO is sufficient to deal with the additional pile up and boosted events.
+Overall the number of muons in the investigated sample was 3722147. The number of ghosts was 12175.\\
+In a next step, the energy information in the HO system for an HO tower has to be investigated to obtain whether HO can serve as muon veto and trigger. This has to be redone also for HL-LHC conditions. Here, one has to check whether the granularity of HO is sufficient to deal with the additional pile up and boosted events.\\
 \subsection{BTI Ghosts}
 \subsubsection{Ghost definition}
 If only one muon passes a muon station and two BTI HQTR are created in this station it is called BTI ghost. (For the description of the BTI system see chapter \ref{DTSystem}.)
@@ -101,7 +101,7 @@ An effiency of about 80\% is reached for one station only (see Fig. \ref{BTIEffi
 \begin{figure}
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/SectorGunPt100dPhi0_5Phi0_h1dFilteredBtiHitsPerEvtSL1.png}
-\caption{Number of BTI trigger in station one for one passing muon and BTI trigger efficiency}
+\caption{Number of BTI triggers (HTRG) in station one for one passing muon and BTI trigger efficiency}
 \label{BTIEfficiency}
 \end{minipage}
 \end{figure}
