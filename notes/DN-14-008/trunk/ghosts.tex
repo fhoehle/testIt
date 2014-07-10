@@ -1,4 +1,4 @@
-\section{Muon ghosts}
+\section[Muon ghosts]{Muon ghosts \footnote{corresponding author: Florian Scheuch}}
 \subsection{The DT System}
 \label{DTSystem}
 The drifttube (DT) system of the muon detector at CMS consists of several organization structures.\\
@@ -23,7 +23,7 @@ For this matching, for every RECO muon the nearest GEN muons in terms of $\Delta
 The following investigations are performed with global muons only, to have both the muon system and tracker information available for every muon. Furthermore, the eta direction of the investigated muons is cut to be abs(eta) $<$ 0.8 to check for muons in the barrel region only. The sample used is a ZZ$\to$4l with 2012 conditions\footnote{Sample: /ZZJetsTo4L\textunderscore TuneZ2star\textunderscore 8TeV-madgraph-tauola/Summer12\textunderscore DR53X-PU\textunderscore S10\textunderscore START53\textunderscore V7A-v1/AODSIM, Global tag: START52\textunderscore V4::All, CMSSW version: 5.3.12 patch 2}.\\
 $\Delta R$ is plotted (Fig. \ref{DeltaRDistribution}) for all GEN muons with their matched RECO muon. If two RECO muons match the same GEN muon, $\Delta R$ is plotted for both RECO muons.\\
 Most of the matched muons have a very small $\Delta R$. Only a few muons have a $\Delta R$ above 0.1 with a maximum at 1.5. It is obvious that the most muon combinations with $\Delta R > 0.1$ come from muons in ghost events. Therefore, a separation between ghosts and real muons using $\Delta R$ seems to be feasible and is discussed.
-\begin{figure}[b]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/Trennung.png}
@@ -37,7 +37,7 @@ For the separation whether a RECO muon is a ghost or real, a $\Delta R$ cut is i
 \subsubsection{Matching efficiency and quality of separation}
 To determine whether the matching algorithm is correct and efficient, some control variables have been studied.\\
 The distance of the vertex position in the z direction (along the beam axis) of the RECO muon and the associated GEN muon was plotted (see Fig. \ref{DeltaZMatching}). The distance is within the resolution of the tracker system. Nevertheless, all muons with a distance of more than 0.1 cm are rejected, since for large distances in the z vertex difference a mismatching can not be imposed.\\
-\begin{figure}[b]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/DeltaZ.png}
@@ -46,15 +46,15 @@ The distance of the vertex position in the z direction (along the beam axis) of 
 \end{minipage}
 \end{figure}
 To show that the determination between ghost and real muon is reliable, the $p_{T}$ ratio between GEN muon and RECO muon is plotted for identified ghosts (see Fig. \ref{PtRatioGhost}) and real muons within a ghost event (see Fig. \ref{PtRatioReal}).
-\begin{figure}[b]
+\begin{figure}[htbp]
 \centering
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[ht]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/ptRatioRealMu.png}
 \caption{$\mathrm{p_{T}}$ ratio of the GEN and RECO mu for identified real RECO muons}
 \label{PtRatioReal}
 \end{minipage}
 \hspace{0.5cm}
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[ht]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/ptRatioGhosts.png}
 \caption{$\mathrm{p_{T}}$ ratio of the GEN and RECO mu for identified RECO ghosts}
 \label{PtRatioGhost}
@@ -69,15 +69,15 @@ To determine whether hadron outer (HO) information can be used to bust ghosts on
 \mathcal{L}=\frac{\mathcal{L}_{\mathrm{muon}}}{\mathcal{L}_{\mathrm{muon}} + \mathcal{L}_\mathrm{not\ muon}}
 \end{equation}
 is plotted.
-\begin{figure}[b]
+\begin{figure}[htbp]
 \centering
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[ht]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/LikelihoodNonGhost.png}
 \caption{Likelihood ratio for an MIP like entry in the calorimeter system for real muons}
 \label{LikelihoodReal}
 \end{minipage}
 \hspace{0.5cm}
-\begin{minipage}[t]{0.475\textwidth}
+\begin{minipage}[ht]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/LikelihoodGhost.png}
 \caption{Likelihood ratio for an MIP like entry in the calorimeter system for ghosts}
 \label{LikelihoodGhost}
@@ -98,7 +98,7 @@ E=\frac{\sum_{i = 1}^\infty N_{\mathrm{BTI}_i}}{\sum_{i = 0}^\infty N_{\mathrm{B
 \end{equation}
 with $N_{\mathrm{BIT}_i}$ the number of events with $i$ BTI triggers.\\
 An effiency of about 80\% is reached for one station only (see Fig. \ref{BTIEfficiency}).
-\begin{figure}
+\begin{figure}[htbp]
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[width=\textwidth]{Figures/scheuch/SectorGunPt100dPhi0_5Phi0_h1dFilteredBtiHitsPerEvtSL1.png}
 \caption{Number of BTI triggers (HTRG) in station one for one passing muon and BTI trigger efficiency}

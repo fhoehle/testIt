@@ -1,4 +1,4 @@
-\section{Trigger link}
+\section[Trigger link]{Trigger link \footnote{corresponding author: Florian Scheuch}}
 The trigger link is a connection between the optical serial link board (oSLB) in the HCAL trigger and readout cards (HTR) of the HO system in the service cavern to the TwinMux. This link provides trigger data from all HO tiles that are matched to the towers of the rest of the calorimeter system.\\
 With this trigger link, which is used to create a technical trigger, the impact of HO information on the L1 trigger rate and the minimal required granularity for ghost busting purposes can be determined.
 The different components, the setup and the idea for a data format are explained in the next sections.
@@ -7,8 +7,8 @@ The trigger link includes the TwinMux and the HTR withtin the HO system. The rel
 \subsubsection{TwinMux}
 The TwinMux is an FPGA based device that receives trigger data from RPC, DT and HO and can be programmed to merge this information to output trigger information using all three sub-detectors in CMS. With the current design the TwinMux can handle up to seven optical input cables coming from HO. The aim is to use only three inputs for HO as maximum.
 \subsubsection{HTR and HO setup}
-The general HTR and HO setup is shown in Fig. \ref{HOPlan}.\\
-\begin{figure}[b]
+The general HTR and HO setup is shown in Fig. \ref{HOPlan}.
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.95\textwidth}
 \includegraphics[height=\textwidth, angle=90]{Figures/scheuch/Chart.png}
