@@ -1,7 +1,7 @@
 \section[HO SiPM upgrade]{HO SiPM upgrade\footnote{Corresponding Author: Andreas K\"unsken}}\label{sec:hoSipmUpgrade}
 \subsection{Hardware design}\label{kuenskenHardwareDesign}
 In the first long shutdown of the LHC, HO was subject to upgrades. The previously used Hybrid Photo-Diodes (HPD) were replaced by SiPMs due to bad performance. The SiPM readout was designed as a drop-in replacement to keep most of the readout chain. The SiPMs were arranged on a newly produced Printed Circuit Board (PCB) to match the position of the pixels of the HPDs. The arrangement of the SiPMs is shown in Fig. \ref{kuenskensipmPcb}.
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/pcbSipm.png}
@@ -23,7 +23,7 @@ SiPMs are solid state devices and rather sensitive to temperature changes, it is
 \subsection{System performance}
 \subsubsection{Temperature}
 The performance of an SiPM changes strongly with the temperature if not corrected for. For this reason it is important to control the temperature of an SiPM before studying other parameters to make sure that any observed change is not due to a change in the temperature. Figure \ref{kuenskentemperatureStability} shows temperature deviations from a reference temperature plotted versus time.
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/temperature.png}
@@ -42,7 +42,7 @@ Each data point represents the temperature on a PCB at a given time. Deviations 
 \subsubsection{Gain}
 The gain determines the signal height that is produced by an SiPM and thus the measured charge. It is necessary to know the gain of an SiPM to determine the number of photons that triggered the SiPM and get a measure of the deposited energy in the detector. HO uses two ways of determining the gain.
 The first is to use the dark noise spectrum of an SiPM that develops due to thermal excitation of electrons in the active volume of an SiPM cell and the subsequent breakdown of that cell. A gauss fit is performed to the pedestal peak and the peaks of one and two avalanches. From the distance of the peak positions the gain is calculated. This method is known as the PED method. An example dark noise spectrum together with an applied fit is shown in Fig. \ref{kuenskendarkNoise}.
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[t]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainOverTime.png}
@@ -71,7 +71,7 @@ assuming Poisson statistics for the uncertainty of the number of photons. Dividi
 This is called the LED method.
 Before reviewing the comparability of the different methods it is necessesary to assure that the means of gain determination are stable. The relative gain variation versus time using the dark noise
 spectrum is depicted in Fig. \ref{kuenskengainVsTime}. For a single PCB the relative gain variation is constant within 2\,\%. A histogram showing the relative gain variations for the same period for all installed SiPMs is plotted in Fig. \ref{kuenskengainHist}. The largest variations are within 3\,\%. The correlation between the two possibilities of determining the gain is printed in Fig. \ref{kuenskengainCorr}.
-\begin{figure}[b]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{0.475\textwidth}
 \includegraphics[width=\textwidth]{Figures/kuensken/gainCorrelation.png}
